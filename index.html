@@ -11,9 +11,59 @@
             text-align: left;
         }
 
-        /* Adiciona a classe .retraida com altura desejada quando retraída */
-        #header.retraida {
-            height: 50px;
+        /* Add new CSS for responsive navigation */
+        #nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #nav ul li {
+            margin: 0 10px;
+        }
+
+        #nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        #nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            #nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #333;
+            }
+
+            #nav ul.show {
+                display: flex;
+            }
+
+            #nav ul li {
+                margin: 0;
+                text-align: center;
+            }
+
+            #nav-toggle {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -37,6 +87,7 @@
 
             <!-- Nav -->
             <nav id="nav">
+                <div id="nav-toggle">&#9776;</div>
                 <ul>
                     <li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
                     <li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
@@ -62,18 +113,10 @@
     </div>
 
     <!-- Main -->
-    <div id="main">
-        <!-- ... (seu conteúdo existente) ... -->
-    </div>
+    <!-- Your existing content... -->
 
     <!-- Footer -->
-    <div id="footer">
-        <!-- Copyright -->
-        <ul class="copyright">
-            <li>&copy; Untitled. All rights reserved.</li>
-            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-        </ul>
-    </div>
+    <!-- Your existing footer... -->
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
@@ -85,18 +128,10 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        $(document).ready(function () {
-            // Armazena a altura original da navbar
-            var alturaOriginal = $('#header .top').height();
-
-            // Adiciona ou remove a classe .retraida ao rolar a página
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > alturaOriginal) {
-                    $('#header').addClass('retraida');
-                } else {
-                    $('#header').removeClass('retraida');
-                }
-            });
+        // Add JavaScript to toggle the responsive navigation
+        document.getElementById('nav-toggle').addEventListener('click', function () {
+            var navList = document.getElementById('nav').querySelector('ul');
+            navList.classList.toggle('show');
         });
     </script>
 </body>
