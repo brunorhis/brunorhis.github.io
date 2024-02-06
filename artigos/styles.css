@@ -3,7 +3,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: url('../images/bground.jpg') center/cover no-repeat;
+    background: url('https://raw.githubusercontent.com/brunorhis/brunorhis.github.io/main/images/bground.jpg') center/cover no-repeat;
     color: #00ff00;
 }
 
