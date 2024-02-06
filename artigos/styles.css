@@ -3,7 +3,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: url('seu-background.jpg') center/cover fixed no-repeat; /* Adicione a URL da sua imagem de background */
+    background: url('../images/bground.jpg.jpg') center/cover no-repeat;
     color: #00ff00;
 }
 
@@ -28,29 +28,19 @@ footer {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.8);
     color: #00ff00;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
 
 @media only screen and (max-width: 600px) {
-    .nav-list {
-        display: none;
-        flex-direction: column;
-        text-align: center;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: #222;
-        z-index: 1;
+    article {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        border-radius: 8px;
     }
 
-    .nav-list.show {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
+    footer {
+        position: relative; /* Remova a posição fixa para dispositivos móveis */
     }
 }
