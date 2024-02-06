@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
+
 <head>
     <title>Bruno Rhis</title>
     <meta charset="utf-8" />
@@ -16,86 +17,88 @@
         }
     </style>
 </head>
+
 <body class="is-preload">
 
-<!-- Header -->
-<div id="header">
+    <!-- Header -->
+    <div id="header">
 
-    <div class="top">
+        <div class="top">
 
-        <!-- Logo -->
-        <div id="logo">
-            <span class="image avatar48"><img src="images/avatar2.jpg" alt="" /></span>
-            <h1 id="title">Bruno Rhis</h1>
-            <p>- Student</p>
-            <p>- Pentester</p>
-            <p>- Tech Support</p>
-            <p>- Consultant</p>
+            <!-- Logo -->
+            <div id="logo">
+                <span class="image avatar48"><img src="images/avatar2.jpg" alt="" /></span>
+                <h1 id="title">Bruno Rhis</h1>
+                <p>- Student</p>
+                <p>- Pentester</p>
+                <p>- Tech Support</p>
+                <p>- Consultant</p>
+            </div>
+
+            <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+                    <li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+                    <li><a href="#about" id="about-link"><span class="icon solid fa-user">Perfil Profissional</span></a></li>
+                    <li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contato</span></a></li>
+                </ul>
+            </nav>
+
         </div>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul>
-                <li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-                <li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
-                <li><a href="#about" id="about-link"><span class="icon solid fa-user">Perfil Profissional</span></a></li>
-                <li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contato</span></a></li>
+        <div class="bottom">
+
+            <!-- Social Icons -->
+            <ul class="icons">
+                <li><a href="https://twitter.com/StolenByAnOtter" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/brunorhis/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="https://github.com/brunorhis" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                <li><a href="#contact" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
             </ul>
-        </nav>
+
+        </div>
 
     </div>
 
-    <div class="bottom">
+    <!-- Main -->
+    <div id="main">
+        <!-- ... (seu conteúdo existente) ... -->
+    </div>
 
-        <!-- Social Icons -->
-        <ul class="icons">
-            <li><a href="https://twitter.com/StolenByAnOtter" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="https://www.facebook.com/brunorhis/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="https://github.com/brunorhis" class="icon brands fa-github"><span class="label">Github</span></a></li>
-            <li><a href="#contact" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+    <!-- Footer -->
+    <div id="footer">
+        <!-- Copyright -->
+        <ul class="copyright">
+            <li>&copy; Untitled. All rights reserved.</li>
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>
-
     </div>
 
-</div>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
-<!-- Main -->
-<div id="main">
-    <!-- ... (seu conteúdo existente) ... -->
-</div>
+    <script>
+        $(document).ready(function () {
+            // Armazena a altura original da navbar
+            var alturaOriginal = $('#header .top').height();
 
-<!-- Footer -->
-<div id="footer">
-    <!-- Copyright -->
-    <ul class="copyright">
-        <li>&copy; Untitled. All rights reserved.</li>
-        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-    </ul>
-</div>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-<script>
-    $(document).ready(function () {
-        // Armazena a altura original da navbar
-        var alturaOriginal = $('#header').height();
-
-        // Adiciona ou remove a classe .retraida ao rolar a página
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > alturaOriginal) {
-                $('#header').addClass('retraida');
-            } else {
-                $('#header').removeClass('retraida');
-            }
+            // Adiciona ou remove a classe .retraida ao rolar a página
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > alturaOriginal) {
+                    $('#header').addClass('retraida');
+                } else {
+                    $('#header').removeClass('retraida');
+                }
+            });
         });
-    });
-</script>
+    </script>
 </body>
+
 </html>
