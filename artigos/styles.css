@@ -1,0 +1,80 @@
+body {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: url('../images/bground.jpg') center/cover fixed no-repeat; /* Adicione a URL da sua imagem de background */
+    color: #00ff00;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ff00;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #00ff00;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+article {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ff00;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Adicionando um estilo responsivo */
+@media only screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    article {
+        padding: 10px;
+    }
+}
+
+/* Estilo adicional para links no artigo */
+article a {
+    color: #00ff00;
+    text-decoration: underline;
+}
+
+/* Estilo para a barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00ff00;
+}
+
+/* Adicionando um estilo hover para os links */
+article a:hover {
+    color: #00cc00;
+}
