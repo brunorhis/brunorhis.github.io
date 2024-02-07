@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 i++;
 
                 if (i < code.length) {
-                    setTimeout(typeLetter, 50);
+                    setTimeout(typeLetter, 30);
                 } else {
                     outputElement.innerHTML += '<br>';
                     setTimeout(() => {
