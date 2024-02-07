@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: black;
+    color: limegreen;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.terminal {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: black;
+    border: 2px solid limegreen;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical */
+    height: 60vh; /* Limita a altura do terminal para uma melhor experiência */
+    position: relative; /* Para posicionar o cursor absolutamente */
+}
+
+#output, #input-line {
+    display: block;
+    white-space: pre-wrap;
+}
+
+#input-line {
+    margin-top: -50px;
+    margin-right: 685px; /* Alteração: adiciona margem à direita do prompt */
+    position: relative;
+    display: flex; /* Alteração: torna o conteúdo do input-line em linha */
+    align-items: center; /* Alteração: centraliza verticalmente os itens */
+}
+
+.prompt {
+    color: limegreen;
+    margin-right: 5px; /* Alteração: adiciona margem à direita do prompt */
+}
+
+#input {
+    border: none;
+    outline: none;
+    background-color: black;
+    color: limegreen;
+    margin-left: 15px;
+}
+
+.cursor {
+    position: absolute;
+    left: calc(100% - 40px); /* Alteração: ajusta a posição do cursor */
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: limegreen;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    70% {
+        opacity: 0;
+    }
+}
