@@ -1,0 +1,16 @@
+- title: Inicio
+  url: /
+- title: Whoami
+  url: /about/
+- title: Artículos
+  url: /years/
+- title: Categorías
+  url: /categories/
+- title: Etiquetas
+  url: /tags/
+- title: WriteUps
+  sublinks:
+    - title: HackTheBox
+      url: /hackthebox/
+    - title: Scripts
+      url: /scripts/
