@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
     const outputElement = document.getElementById('output');
     const inputElement = document.getElementById('input');
-    const cursor = document.querySelector('.cursor'); // Adicionado o seletor para o cursor
+    const cursor = document.querySelector('.cursor');
     const terminal = document.querySelector('.terminal');
 
     const codes = [
-        "$.accessRqst = !0)",
+        "$.accessRqst = !0;",
         "function (a, b, c) {",
         "    function d(c) {",
         "        var d = b.console;",
         "        f[c] || (£[c] = !0,",
         "        a.migrateWarnings.push (c),",
         "    }",
-        "    d && d.warn && !a.accessRqst & &",
+        "    d && d.warn && !a.accessRqst &&",
         "    (d.warn ('Bank Transfer: ' + c),",
-        "    a.migrateTrace && d.trace & &",
+        "    a.migrateTrace && d.trace &&",
         "    d.trace ())",
         "}"
     ];
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     outputElement.innerHTML += '<br>';
                     setTimeout(() => {
                         typeCode(index + 1);
-                        cursor.style.display = 'none'; // Oculta a linha piscante após o código ser digitado
+                        cursor.style.display = 'none';
                     }, 100);
                 }
             }
@@ -56,16 +56,16 @@ document.addEventListener('DOMContentLoaded', function () {
             outputElement.innerHTML += `<br>Acesso concedido, ${name}!<br>Redirecionando...`;
 
             setTimeout(() => {
-                window.location.href = 'https://www.brcybersec.com/main.html';
-            }, 5000); // Aguarda 5 segundos antes de redirecionar
+                if (window.location.href !== 'https://www.brcybersec.com/main.html') {
+                    window.location.href = 'https://www.brcybersec.com/main.html';
+                }
+            }, 5000);
 
-            // Oculta o input-line e a linha piscante
             inputElement.style.display = 'none';
             cursor.style.display = 'none';
         }
     }
 
-    // Inicia a simulação após um breve atraso
     setTimeout(() => {
         typeCode(0);
     }, 500);
