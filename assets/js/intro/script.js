@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
             outputElement.innerHTML += `<br>Acesso concedido, ${name}!<br>Redirecionando...`;
 
             setTimeout(() => {
-                window.location.href = 'https://www.google.com';
+                window.location.href = 'https://www.brcybersec.com/main.html';
             }, 5000); // Aguarda 5 segundos antes de redirecionar
 
             // Oculta o input-line e a linha piscante
