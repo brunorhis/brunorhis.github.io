@@ -11,6 +11,15 @@ body {
     background-color: black;
     color: rgb(255, 255, 255);
 }
+footer {
+            background-color: #f1f1f1; /* Cor de fundo cinza */
+            padding: 10px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o texto */
+        }
+ footer p {
+            font-size: 12px; /* Tamanho da fonte */
+            color: #666; /* Cor do texto cinza */
+        }
 
 .header {
     position: fixed;
