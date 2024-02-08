@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "    (d.warn ('Bank Transfer: ' + c),",
         "    a.migrateTrace && d.trace &&",
         "    d.trace ())",
-        "}"
+        "}",
     ];
 
     function typeCode(index) {
@@ -42,27 +42,17 @@ document.addEventListener('DOMContentLoaded', function () {
             typeLetter();
         } else {
             setTimeout(() => {
-                outputElement.innerHTML += "<br>Insira seu nome:";
-                inputElement.removeAttribute('disabled');
-                inputElement.focus();
+                outputElement.innerHTML += "<br>Acesso concedido, guest!<br>Redirecionando...";
+
+                setTimeout(() => {
+                    if (window.location.href !== 'https://www.brcybersec.com/main.html') {
+                        window.location.replace('https://www.brcybersec.com/main.html');
+                    }
+                }, 5000);
+
+                inputElement.style.display = 'none';
+                cursor.style.display = 'none';
             }, 500);
-        }
-    }
-
-    function handleInput() {
-        const name = inputElement.value.trim();
-
-        if (name !== '') {
-            outputElement.innerHTML += `<br>Acesso concedido, ${name}!<br>Redirecionando...`;
-
-            setTimeout(() => {
-                if (window.location.href !== 'https://www.brcybersec.com/main.html') {
-                    window.location.replace('https://www.brcybersec.com/main.html');
-                }
-            }, 5000);
-
-            inputElement.style.display = 'none';
-            cursor.style.display = 'none';
         }
     }
 
@@ -75,4 +65,17 @@ document.addEventListener('DOMContentLoaded', function () {
             handleInput();
         }
     });
+
+    function handleInput() {
+        outputElement.innerHTML += "<br>Acesso concedido, guest!<br>Redirecionando...";
+
+        setTimeout(() => {
+            if (window.location.href !== 'https://www.brcybersec.com/main.html') {
+                window.location.replace('https://www.brcybersec.com/main.html');
+            }
+        }, 5000);
+
+        inputElement.style.display = 'none';
+        cursor.style.display = 'none';
+    }
 });
