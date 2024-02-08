@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "    function d(c) {",
         "        var d = b.console;",
         "        f[c] || (£[c] = !0,",
-        "        a.migrateWarnings.push (c),",
+        "        a.migrateWarnings.push (c);",
         "    }",
         "    d && d.warn && !a.accessRqst &&",
         "    (d.warn ('Bank Transfer: ' + c),",
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             setTimeout(() => {
                 if (window.location.href !== 'https://www.brcybersec.com/main.html') {
-                    window.location.href = 'https://www.brcybersec.com/main.html';
+                    window.location.replace('https://www.brcybersec.com/main.html');
                 }
             }, 5000);
 
