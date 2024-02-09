@@ -257,49 +257,7 @@ canvas {
     background-size: auto;
     scroll-behavior: smooth;
 }
-
-@media only screen and (max-width: 768px) {
-    .header {
-        padding: 15px 5%;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    .navbar a {
-        font-size: 16px;
-        margin-left: 20px;
-    }
-
-    .home {
-        padding: 50px 5% 0;
-    }
-
-    .home-content {
-        max-width: 100%;
-        padding: 20px;
-    }
-
-    .home-content h1 {
-        font-size: 40px;
-    }
-
-    .home-content h3 {
-        font-size: 24px;
-    }
-
-    .home-content p {
-        font-size: 14px;
-    }
-
-    .home-sci a {
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-        margin: 20px 10px 20px 0;
-    }
-}
+/* ---------------------------whoami----------------------- */
 
 
 /* ---------------------------About----------------------- */
