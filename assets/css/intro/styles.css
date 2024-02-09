@@ -35,7 +35,7 @@ body {
 }
 
 #input-line {
-    margin-top: -50px;
+    margin-top: -100px;
     margin-right: 0; /* Alteração: ajusta a margem direita do input-line */
     position: relative;
     display: flex;
