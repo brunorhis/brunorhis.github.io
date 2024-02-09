@@ -12,8 +12,8 @@ body {
 
 .terminal {
 
-    width: 80%;
-    max-width: 900px;
+    width: 90%;
+    max-width: 800px;
     padding: 20px;
     background-color: black;
     border-top: 30px solid limegreen;
@@ -23,7 +23,7 @@ body {
     box-sizing: border-box;
     white-space: pre-wrap;
     overflow-y: auto;
-    height: 70vh;
+    height: 60vh;
     position: relative;
 }
 
