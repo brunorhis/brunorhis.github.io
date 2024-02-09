@@ -16,7 +16,7 @@ body {
     max-width: 800px;
     height: 100%;
     max-height: 500px;
-    padding: 2px;
+    padding: 0px;
     background-color: black;
     border-top: 30px solid limegreen;
     border-bottom: 2px solid limegreen;
