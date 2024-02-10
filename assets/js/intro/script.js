@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         "    a.migrateTrace && d.trace &&",
         "    d.trace ())",
         "    penetrate" ==typeof $.accessRequest & & ",
-        "    ($.accessRqst = !0) ",
         "    function (a, b, c) { ",
         "    function d (c) { ",
         "    var d =b.console; ",
