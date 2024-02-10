@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const terminal = document.querySelector('.terminal');
 
     const codes = [
-        "seu cu",
         "$.accessRqst = !0;",
         "function (a, b, c) {",
         "    function d(c) {",
@@ -16,6 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
         "    (d.warn ('Bank Transfer: ' + c),",
         "    a.migrateTrace && d.trace &&",
         "    d.trace ())",
+        "    penetrate" ==typeof $.accessRequest & & ",
+        "    ($.accessRqst = !0) ",
+        "    function (a, b, c) { ",
+        "    function d (c) { ",
+        "    var d =b.console; ",
+        "    return void ",
+        " var username = document.getElementById('guest').value; ",
+        " var password = document.getElementById('Anonymous').value;"
     ];
 
     function typeCode(index) {
