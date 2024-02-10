@@ -16,13 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         "    (d.warn('Bank Transfer: ' + c),",
         "    a.migrateTrace && d.trace &&",
         "    d.trace());",
-        "    penetrate == typeof $.accessRequest &&",
-        "    function (a, b, c) {",
-        "        function d(c) {",
-        "            var d = b.console;",
-        "            return void 0;",
-        "        }",
-        "    }",
         "    var username = document.getElementById('guest').value;",
         "    var password = document.getElementById('Anonymous').value;"
     ];
