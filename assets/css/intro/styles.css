@@ -22,7 +22,7 @@ body {
     box-sizing: border-box;
     white-space: pre-wrap;
     overflow-y: auto;
-    height: 70vh; /* Ajuste na altura do terminal para 70% da altura da tela */
+    height: 80vh; /* Ajuste na altura do terminal para 70% da altura da tela */
     position: relative;
 }
 
