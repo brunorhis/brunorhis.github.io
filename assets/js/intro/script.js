@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "        }",
         "    }",
         "    var username = document.getElementById('guest').value;",
-        "    var password = document.getElementById('Anonymous').value;"
+        "    var password = document.getElementById('Anonymous').value;",
     ];
 
     function typeCode(index) {
