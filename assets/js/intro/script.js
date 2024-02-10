@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
         "    (d.warn ('Bank Transfer: ' + c),",
         "    a.migrateTrace && d.trace &&",
         "    d.trace ())",
-        "}",
     ];
 
     function typeCode(index) {
