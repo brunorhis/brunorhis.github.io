@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const terminal = document.querySelector('.terminal');
 
     const codes = [
+        "seu cu",
         "$.accessRqst = !0;",
         "function (a, b, c) {",
         "    function d(c) {",
