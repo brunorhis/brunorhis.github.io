@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
         "        var d = b.console;",
         "        f[c] || (£[c] = !0,",
         "        a.migrateWarnings.push (c);",
-        "    }",
         "    d && d.warn && !a.accessRqst &&",
         "    (d.warn ('Bank Transfer: ' + c),",
         "    a.migrateTrace && d.trace &&",
