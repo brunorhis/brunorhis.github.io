@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             typeLetter();
         } else {
             setTimeout(() => {
-                outputElement.innerHTML += "<br>Acesso concedido, guest!<br>Redirecionando...";
+                outputElement.innerHTML += "<br>Acesso concedido, guest!;
 
                 setTimeout(() => {
                     if (window.location.href !== 'https://www.brcybersec.com/main.html') {
