@@ -11,11 +11,10 @@ body {
 }
 
 .terminal {
+
     width: 80%;
     max-width: 800px;
-    height: 800%;
-    max-height: 400px;
-    padding: 0;
+    padding: 20px;
     background-color: black;
     border-top: 30px solid limegreen;
     border-bottom: 2px solid limegreen;
@@ -24,8 +23,10 @@ body {
     box-sizing: border-box;
     white-space: pre-wrap;
     overflow-y: auto;
+    height: 60vh;
     position: relative;
 }
+
 
 #output, #input-line {
     display: block;
@@ -34,7 +35,7 @@ body {
 
 #input-line {
     margin-top: -50px;
-    margin-right: 0;
+    margin-right: 0; /* Alteração: ajusta a margem direita do input-line */
     position: relative;
     display: flex;
     align-items: center;
@@ -51,12 +52,11 @@ body {
     background-color: black;
     color: limegreen;
     margin-left: 15px;
-    width: 80%; /* Ajusta a largura do input */
 }
 
 .cursor {
     position: absolute;
-    left: calc(100% - 20px);
+    left: calc(100% - 20px); /* Ajuste na posição do cursor */
     top: 0;
     height: 100%;
     width: 2px;
