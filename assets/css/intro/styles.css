@@ -11,7 +11,6 @@ body {
 }
 
 .terminal {
-
     width: 80%;
     max-width: 800px;
     padding: 20px;
@@ -23,10 +22,9 @@ body {
     box-sizing: border-box;
     white-space: pre-wrap;
     overflow-y: auto;
-    height: 60vh;
+    height: 70vh; /* Ajuste na altura do terminal para 70% da altura da tela */
     position: relative;
 }
-
 
 #output, #input-line {
     display: block;
@@ -35,7 +33,7 @@ body {
 
 #input-line {
     margin-top: -50px;
-    margin-right: 0; /* Alteração: ajusta a margem direita do input-line */
+    margin-right: 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -56,7 +54,7 @@ body {
 
 .cursor {
     position: absolute;
-    left: calc(100% - 20px); /* Ajuste na posição do cursor */
+    left: calc(100% - 20px);
     top: 0;
     height: 100%;
     width: 2px;
