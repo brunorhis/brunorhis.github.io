@@ -10,18 +10,21 @@ document.addEventListener('DOMContentLoaded', function () {
         "    function d(c) {",
         "        var d = b.console;",
         "        f[c] || (£[c] = !0,",
-        "        a.migrateWarnings.push (c);",
+        "        a.migrateWarnings.push(c));",
+        "    }",
         "    d && d.warn && !a.accessRqst &&",
-        "    (d.warn ('Bank Transfer: ' + c),",
+        "    (d.warn('Bank Transfer: ' + c),",
         "    a.migrateTrace && d.trace &&",
-        "    d.trace ())",
-        "    penetrate" ==typeof $.accessRequest & & ",
-        "    function (a, b, c) { ",
-        "    function d (c) { ",
-        "    var d =b.console; ",
-        "    return void ",
-        " var username = document.getElementById('guest').value; ",
-        " var password = document.getElementById('Anonymous').value;"
+        "    d.trace());",
+        "    penetrate == typeof $.accessRequest &&",
+        "    function (a, b, c) {",
+        "        function d(c) {",
+        "            var d = b.console;",
+        "            return void 0;",
+        "        }",
+        "    }",
+        "    var username = document.getElementById('guest').value;",
+        "    var password = document.getElementById('Anonymous').value;"
     ];
 
     function typeCode(index) {
@@ -61,16 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    setTimeout(() => {
-        typeCode(0);
-    }, 500);
-
-    inputElement.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') {
-            handleInput();
-        }
-    });
-
     function handleInput() {
         outputElement.innerHTML += "<br>Acesso concedido, guest!<br>Redirecionando...";
 
@@ -83,4 +76,14 @@ document.addEventListener('DOMContentLoaded', function () {
         inputElement.style.display = 'none';
         cursor.style.display = 'none';
     }
+
+    setTimeout(() => {
+        typeCode(0);
+    }, 500);
+
+    inputElement.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            handleInput();
+        }
+    });
 });
