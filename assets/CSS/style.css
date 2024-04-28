@@ -258,9 +258,36 @@ canvas {
     scroll-behavior: smooth;
 }
 /* ---------------------------whoami----------------------- */
+.about-content {
+    max-width: 600px;
+    padding: 50px;
+    margin-left: -30px;
+}
+
+.about-content h3 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 5px 4px 10px green;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.about-content p {
+    font-size: 16px;
+    margin: 20px 0 0;
+    text-align: left;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.3s;
+}
 
 
-/* ---------------------------About----------------------- */
+
+
+
+/* ---------------------------About-----------------------
 
 .about {
     width: 100%;
@@ -292,6 +319,7 @@ canvas {
     animation: slideLeft 1s ease forwards;
     animation-delay: 1.3s;
 }
+*/
 
 /* Animation */
 @keyframes slideTop {
