@@ -27,6 +27,7 @@
             max-width: 800px;
             height: 70vh;
             overflow-y: auto;
+            box-sizing: border-box;
         }
 
         #output {
@@ -66,7 +67,7 @@
 </head>
 <body>
     <div class="terminal">
-        <pre id="output">Inicializando sistema...<br></pre>
+        <pre id="output">Inicializando sistema...<br>Sistema inicializado.<br></pre>
         <div id="input-line">
             <span class="prompt">></span>
             <input type="text" id="input" autofocus>
@@ -94,10 +95,7 @@
                 output.scrollTop = output.scrollHeight;
             }
 
-            input.removeAttribute('disabled');
             input.focus();
-
-            output.innerHTML += 'Sistema inicializado.\n';
         });
     </script>
 </body>
