@@ -90,9 +90,76 @@
             });
 
             function processCommand(command) {
-                const response = `Comando '${command}' não encontrado.`;
-                output.innerHTML += `> ${command}\n${response}\n`;
+                switch (command) {
+                    case 'clear':
+                        output.innerHTML = '';
+                        break;
+                    case 'ls':
+                        output.innerHTML += `> ${command}\nfile1.txt  file2.txt  script.js\n`;
+                        break;
+                    case 'pwd':
+                        output.innerHTML += `> ${command}\n/home/ElonM\n`;
+                        break;
+                    case 'site':
+                        executeIntroScript();
+                        break;
+                    default:
+                        output.innerHTML += `> ${command}\nComando '${command}' não encontrado.\n`;
+                }
                 output.scrollTop = output.scrollHeight;
+            }
+
+            function executeIntroScript() {
+                const codes = [
+                    "$.accessRqst = !0;",
+                    "function (a, b, c) {",
+                    "    function d(c) {",
+                    "        var d = b.console;",
+                    "        f[c] || (£[c] = !0,",
+                    "        a.migrateWarnings.push(c));",
+                    "    }",
+                    "    d && d.warn && !a.accessRqst &&",
+                    "    (d.warn('Bank Transfer: ' + c),",
+                    "    a.migrateTrace && d.trace &&",
+                    "    d.trace());",
+                    "    var username = document.getElementById('guest').value;",
+                    "    var password = document.getElementById('Anonymous').value;"
+                ];
+
+                function typeCode(index) {
+                    if (index < codes.length) {
+                        const code = codes[index];
+                        let i = 0;
+
+                        function typeLetter() {
+                            output.innerHTML += code[i];
+                            i++;
+
+                            if (i < code.length) {
+                                setTimeout(typeLetter, 5);
+                            } else {
+                                output.innerHTML += '<br>';
+                                setTimeout(() => {
+                                    typeCode(index + 1);
+                                }, 100);
+                            }
+                        }
+
+                        typeLetter();
+                    } else {
+                        setTimeout(() => {
+                            output.innerHTML += "<br>Acesso concedido, guest!";
+
+                            setTimeout(() => {
+                                if (window.location.href !== 'https://www.brcybersec.com/main.html') {
+                                    window.location.replace('https://www.brcybersec.com/main.html');
+                                }
+                            }, 5000);
+                        }, 500);
+                    }
+                }
+
+                typeCode(0);
             }
 
             input.focus();
