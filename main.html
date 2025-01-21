@@ -47,6 +47,20 @@
                       backDelay: 1000,  
                       loop: true        
                     });
+
+                    document.addEventListener('contextmenu', function(event) {
+                event.preventDefault();
+            });
+
+            input.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    const command = input.value.trim().toLowerCase();
+                    if (command) {
+                        processCommand(command);
+                        input.value = '';
+                    }
+                }
+            });
                 </script>
             </span></h3>
             
