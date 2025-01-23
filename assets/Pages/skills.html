@@ -9,26 +9,17 @@
     <link rel="icon" type="png|image" href="../IMAGES/sailogo.png">
     <link rel="stylesheet" href="../CSS/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js">
-
-	    document.addEventListener('contextmenu', function(event) {
-                event.preventDefault();
-            });
-
-            input.addEventListener('keydown', function(event) {
-                if (event.key === 'Enter') {
-                    const command = input.value.trim().toLowerCase();
-                    if (command) {
-                        processCommand(command);
-                        input.value = '';
-                    }
-                }
-            });
-    </script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
 </head>
 <body>
 
+    <script>
+	 // Bloqueia o clique direito
+            document.addEventListener('contextmenu', function(event) {
+                event.preventDefault();
+            });
+    </script>
     <header class="header">
         <a href="#" class="logo"> </a>
 
