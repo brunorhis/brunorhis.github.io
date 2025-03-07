@@ -8,18 +8,20 @@
   <style>
     /* Variáveis para facilitar ajustes */
     :root {
-      --bg-color: #121212;
+      --overlay-color: rgba(18, 18, 18, 0.7); /* Fundo semitransparente para o container */
       --terminal-bg: #1e1e1e;
       --text-color: #00ff00;
       --cursor-color: #00ff00;
       --shadow-color: rgba(0, 255, 0, 0.3);
       --header-bg: #2a2a2a;
     }
-
+    
+    /* Aplicando o gif como plano de fundo */
     body {
       margin: 0;
       padding: 0;
-      background-color: var(--bg-color);
+      background: url('https://giffiles.alphacoders.com/120/120006.gif') no-repeat center center fixed;
+      background-size: cover;
       font-family: 'Courier New', Courier, monospace;
       display: flex;
       justify-content: center;
@@ -27,16 +29,15 @@
       height: 100vh;
     }
 
-    /* Container com bordas e sombra para simular a janela do terminal */
     .terminal-container {
       width: 90%;
       max-width: 800px;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 0 15px var(--shadow-color);
+      background-color: var(--overlay-color); /* Fundo semitransparente para destacar o conteúdo */
     }
 
-    /* Cabeçalho simulando os botões de controle (como no macOS) */
     .terminal-header {
       background-color: var(--header-bg);
       padding: 8px;
@@ -54,7 +55,6 @@
     .circle.yellow { background-color: #ffbd2e; }
     .circle.green { background-color: #27c93f; }
 
-    /* Estilo do terminal */
     .terminal {
       background-color: var(--terminal-bg);
       color: var(--text-color);
@@ -89,7 +89,6 @@
       outline: none;
     }
 
-    /* Animação para o cursor */
     #input-line .cursor {
       border-left: 2px solid var(--cursor-color);
       animation: blink 1s step-end infinite;
@@ -100,7 +99,6 @@
       50% { border-color: transparent; }
     }
 
-    /* Responsividade para telas menores */
     @media (max-width: 600px) {
       .terminal {
         height: 60vh;
@@ -156,10 +154,10 @@ Digite 'help' para ver os comandos disponíveis.</pre>
             output.innerHTML = '';
             break;
           case 'ls':
-            output.innerHTML += `\n> ${command}\nfile1.txt  file2.txt  script.js root.txt\n`;
+            output.innerHTML += `\n> ${command}\nfile1.txt  file2.txt  script.js\n`;
             break;
           case 'pwd':
-            output.innerHTML += `\n> ${command}\n/home/ElonM\n`;
+            output.innerHTML += `\n> ${command}\n/home/Bruno\n`;
             break;
           case 'site':
             executeIntroScript();
@@ -213,7 +211,7 @@ Digite 'help' para ver os comandos disponíveis.</pre>
             setTimeout(() => {
               output.innerHTML += "<br>Acesso concedido, guest!";
               setTimeout(() => {
-                window.location.replace('https://brcybersec.com/main.html');
+                window.location.replace('https://www.brcybersec.com/main.html');
               }, 5000);
             }, 500);
           }
