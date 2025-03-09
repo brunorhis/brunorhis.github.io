@@ -1,48 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Bruno Rhis</title>
-
-    <link rel="icon" type="png|image" href="../IMAGES/sailogo.png">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="description" content="Quem sou eu - Bruno Rhis">
+  <meta name="keywords" content="Bruno Rhis, Whoami, Biografia">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whoami | Bruno Rhis</title>
+  <link rel="icon" href="../IMAGES/sailogo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    /* Estilos básicos – reutilize estes estilos em todas as páginas para consistência */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: #000; color: #e0e0e0; font-family: 'Orbitron', sans-serif; line-height: 1.6; }
+    header { padding: 20px; border-bottom: 2px solid #39ff14; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 2rem; font-weight: 700; color: #39ff14; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { font-size: 1rem; transition: color 0.3s; }
+    nav ul li a:hover, nav ul li a.active { color: #39ff14; }
+    .content { padding: 20px; }
+    .content h1 { font-size: 3rem; margin-bottom: 20px; color: #39ff14; }
+    .content p { font-size: 1.2rem; margin-bottom: 15px; }
+    @media (max-width: 768px) {
+      header { flex-direction: column; text-align: center; }
+      nav ul { flex-direction: column; gap: 10px; margin-top: 10px; }
+    }
+  </style>
 </head>
 <body>
-    <script>
-	 // Bloqueia o clique direito
-            document.addEventListener('contextmenu', function(event) {
-                event.preventDefault();
-            });
-    </script>	
-
-    <header class="header">
-        <a href="#" class="logo"> </a>
-
-        <nav class="navbar">
-            <a href="../../main.html" style="--i:1;" class="active">Home</a>
-            <a href="whoami.html" style="--i:2;">Whoami</a>
-            <a href="skills.html" style="--i:3;">Skills</a>
-            <a href="artigos.html" style="--i:4;">Artigos</a>
-            <a href="contato.html" style="--i:5;">Contato</a>
-        </nav>
-    </header>
-	 <section>
-	    <div class="about-content">
-	    <p></p>
-    	    <h3>Olá, eu me chamo Bruno...</h3>
-    	    <p></p>
-   	    <p></p>
-	    </div>
-            <div>
-	    <p>&emsp; &emsp;Em Contrução.</p>
-            </div><br><br><br><br>
-	 </section>
-    </section>
-
-</body> 
+  <header>
+    <div class="logo">[ Portfolio ]</div>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="whoami.html" class="active">Whoami</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="artigos.html">Artigos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="content">
+    <h1>Quem Sou Eu?</h1>
+    <p>Olá, sou Bruno Rhis, apaixonado por tecnologia e cibersegurança. Desde cedo, busco aprofundar meus conhecimentos em TI, programação e testes de penetração.</p>
+    <p>Com experiência em consultoria e atuação como pentester, estou sempre em busca de novos desafios e oportunidades para colaborar com a comunidade de cibersegurança.</p>
+    <p>Minha trajetória é marcada pela evolução constante, ética e inovação. Let's Hack!</p>
+  </section>
+</body>
 </html>
