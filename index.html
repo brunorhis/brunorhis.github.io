@@ -8,7 +8,7 @@
   <style>
     /* Variáveis para facilitar ajustes */
     :root {
-      --overlay-color: rgba(18, 18, 18, 0.7); /* Fundo semitransparente para o container */
+      --overlay-color: rgba(18, 18, 18, 0.7);
       --terminal-bg: #1e1e1e;
       --text-color: #00ff00;
       --cursor-color: #00ff00;
@@ -16,7 +16,7 @@
       --header-bg: #2a2a2a;
     }
     
-    /* Aplicando o gif como plano de fundo */
+    /* Plano de fundo com gif */
     body {
       margin: 0;
       padding: 0;
@@ -35,7 +35,7 @@
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 0 15px var(--shadow-color);
-      background-color: var(--overlay-color); /* Fundo semitransparente para destacar o conteúdo */
+      background-color: var(--overlay-color);
     }
 
     .terminal-header {
@@ -169,23 +169,33 @@ Digite 'help' para ver os comandos disponíveis.</pre>
 - clear: Limpa o terminal
 - ls: Lista arquivos
 - pwd: Mostra o diretório atual
-- cat [arquivo]: Mostra o conteúdo do arquivo
+- cat [arquivo]: Exibe o conteúdo de um arquivo (ex.: cat file1.txt)
 - site: Executa script de acesso
 - help: Mostra esta lista de comandos\n`;
             break;
-          // Comandos cat para cada arquivo fictício
+          // Se for apenas "cat" sem parâmetro:
+          case 'cat':
+            output.innerHTML += `\n> ${command}\nUso: cat [nome do arquivo]\nExemplo: cat file1.txt\n`;
+            break;
+          // Comandos cat para arquivos específicos
           case 'cat file1.txt':
-            // Conteúdo: Base64 do seu LinkedIn URL
+            // Conteúdo: Base64 do URL do LinkedIn
             output.innerHTML += `\n> ${command}\n${btoa("https://www.linkedin.com/in/brunorhis")}\n`;
             break;
           case 'cat file2.txt':
-            output.innerHTML += `\n> ${command}\nEste é um arquivo de exemplo com informações confidenciais fictícias.\n`;
+            // Conteúdo: Relatório de vulnerabilidades fictício
+            output.innerHTML += `\n> ${command}\nRelatório de Vulnerabilidades (12/03/2023):
+- Nenhuma vulnerabilidade crítica identificada.
+- Atualizações de segurança aplicadas com sucesso.
+- Sistema monitorado 24/7 sem incidentes.\n`;
             break;
           case 'cat script.js':
-            output.innerHTML += `\n> ${command}\n// Exemplo de script fictício\nfunction init(){\n  console.log("Script iniciado...");\n}\ninit();\n`;
+            // Conteúdo: Exemplo realista de script
+            output.innerHTML += `\n> ${command}\n// script.js - Inicialização da aplicação\ndocument.addEventListener('DOMContentLoaded', () => {\n  console.log("Aplicação iniciada com sucesso.");\n});\n`;
             break;
           case 'cat root.txt':
-            output.innerHTML += `\n> ${command}\nRoot Access Granted: [Senha Secreta: 4d3f5g7h9j]\n`;
+            // Conteúdo: Acesso root fictício
+            output.innerHTML += `\n> ${command}\nRoot Access Granted: \nToken: 3e5b-9c1f-47a2-8f7d\nPrivilegios escalados com sucesso.\n`;
             break;
           default:
             output.innerHTML += `\n> ${command}\nComando '${command}' não encontrado.\n`;
