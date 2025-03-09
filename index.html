@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/IMAGES/sailogo.png">
+  <title>Bruno Rhis - Intro</title>
+  <style>
+    /* Variáveis para facilitar ajustes */
+    :root {
+      --overlay-color: rgba(18, 18, 18, 0.7); /* Fundo semitransparente para o container */
+      --terminal-bg: #1e1e1e;
+      --text-color: #00ff00;
+      --cursor-color: #00ff00;
+      --shadow-color: rgba(0, 255, 0, 0.3);
+      --header-bg: #2a2a2a;
+    }
+    
+    /* Aplicando o gif como plano de fundo */
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://imgur.com/sGqItf8.gif') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .terminal-container {
+      width: 90%;
+      max-width: 800px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 15px var(--shadow-color);
+      background-color: var(--overlay-color); /* Fundo semitransparente para destacar o conteúdo */
+    }
+
+    .terminal-header {
+      background-color: var(--header-bg);
+      padding: 8px;
+      display: flex;
+      align-items: center;
+    }
+
+    .terminal-header .circle {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+    .circle.red { background-color: #ff5f56; }
+    .circle.yellow { background-color: #ffbd2e; }
+    .circle.green { background-color: #27c93f; }
+
+    .terminal {
+      background-color: var(--terminal-bg);
+      color: var(--text-color);
+      padding: 20px;
+      height: 70vh;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    #output {
+      white-space: pre-wrap;
+      margin: 0;
+    }
+
+    #input-line {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .prompt {
+      margin-right: 8px;
+    }
+
+    #input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-color);
+      font-family: inherit;
+      font-size: 16px;
+      outline: none;
+    }
+
+    #input-line .cursor {
+      border-left: 2px solid var(--cursor-color);
+      animation: blink 1s step-end infinite;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    @media (max-width: 600px) {
+      .terminal {
+        height: 60vh;
+        padding: 15px;
+      }
+      #input {
+        font-size: 14px;
+      }
+    }
+  </style>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+</head>
+<body>
+  <div class="terminal-container">
+    <div class="terminal-header">
+      <div class="circle red"></div>
+      <div class="circle yellow"></div>
+      <div class="circle green"></div>
+    </div>
+    <div class="terminal">
+      <pre id="output">Inicializando sistema...
+Sistema inicializado.
+
+Digite 'help' para ver os comandos disponíveis.</pre>
+      <div id="input-line">
+        <span class="prompt">&gt;</span>
+        <input type="text" id="input" autofocus>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const input = document.getElementById('input');
+      const output = document.getElementById('output');
+
+      // Bloqueia o clique com o botão direito
+      document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+      });
+
+      input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          const command = input.value.trim().toLowerCase();
+          if (command) {
+            processCommand(command);
+            input.value = '';
+          }
+        }
+      });
+
+      function processCommand(command) {
+        // Comandos básicos
+        switch (command) {
+          case 'clear':
+            output.innerHTML = '';
+            break;
+          case 'ls':
+            output.innerHTML += `\n> ${command}\nfile1.txt  file2.txt  script.js  root.txt\n`;
+            break;
+          case 'pwd':
+            output.innerHTML += `\n> ${command}\n/home/ElonM\n`;
+            break;
+          case 'site':
+            executeIntroScript();
+            break;
+          case 'help':
+            output.innerHTML += `\n> ${command}\nComandos disponíveis:
+- clear: Limpa o terminal
+- ls: Lista arquivos
+- pwd: Mostra o diretório atual
+- cat [arquivo]: Mostra o conteúdo do arquivo (file1.txt, file2.txt, script.js, root.txt)
+- site: Executa script de acesso
+- help: Mostra esta lista de comandos\n`;
+            break;
+          // Comandos cat para cada arquivo fictício
+          case 'cat file1.txt':
+            // Conteúdo: Base64 do seu LinkedIn URL
+            output.innerHTML += `\n> ${command}\n${btoa("https://www.linkedin.com/in/brunorhis")}\n`;
+            break;
+          case 'cat file2.txt':
+            output.innerHTML += `\n> ${command}\nEste é um arquivo de exemplo com informações confidenciais fictícias.\n`;
+            break;
+          case 'cat script.js':
+            output.innerHTML += `\n> ${command}\n// Exemplo de script fictício\nfunction init(){\n  console.log("Script iniciado...");\n}\ninit();\n`;
+            break;
+          case 'cat root.txt':
+            output.innerHTML += `\n> ${command}\nRoot Access Granted: [Senha Secreta: 4d3f5g7h9j]\n`;
+            break;
+          default:
+            output.innerHTML += `\n> ${command}\nComando '${command}' não encontrado.\n`;
+        }
+        output.scrollTop = output.scrollHeight;
+      }
+
+      function executeIntroScript() {
+        const codes = [
+          "$.accessRqst = true;",
+          "function (a, b, c) {",
+          "    function d(c) {",
+          "        var d = b.console;",
+          "        if (!f[c]) {",
+          "            £[c] = true;",
+          "            a.migrateWarnings.push(c);",
+          "        }",
+          "    }",
+          "    if (d && d.warn && !a.accessRqst) {",
+          "        d.warn('Bank Transfer: ' + c);",
+          "        if (a.migrateTrace && d.trace) {",
+          "            d.trace();",
+          "        }",
+          "    }",
+          "    var username = document.getElementById('guest').value;",
+          "    var password = document.getElementById('Anonymous').value;"
+        ];
+
+        function typeCode(index) {
+          if (index < codes.length) {
+            const code = codes[index];
+            let i = 0;
+            function typeLetter() {
+              output.innerHTML += code[i];
+              i++;
+              if (i < code.length) {
+                setTimeout(typeLetter, 5);
+              } else {
+                output.innerHTML += '<br>';
+                setTimeout(() => typeCode(index + 1), 100);
+              }
+            }
+            typeLetter();
+          } else {
+            setTimeout(() => {
+              output.innerHTML += "<br>Acesso concedido, guest!";
+              setTimeout(() => {
+                window.location.replace('https://brcybersec.com/main.html');
+              }, 5000);
+            }, 500);
+          }
+        }
+        typeCode(0);
+      }
+
+      input.focus();
+    });
+  </script>
+</body>
+</html>
