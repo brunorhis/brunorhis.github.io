@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Portfólio de Bruno Rhis - Consultor de TI, Pentester, Programador e Hacker Ético.">
+  <meta name="keywords" content="Bruno Rhis, Portfólio, Cybersecurity, TI, Pentest, Programador, Hacker Ético">
+  <meta name="author" content="Bruno Rhis">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Bruno Rhis</title>
+  <link rel="icon" href="assets/IMAGES/sailogo.png" type="image/png">
+  <!-- Bootstrap Darkly Theme via Bootswatch -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/darkly/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/CSS/style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS para reforçar o tema cyber */
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header.header {
+      padding: 1rem 2rem;
+      background: #1f1f1f;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    header .logo {
+      font-size: 1.5rem;
+      color: #00ffc3;
+      font-weight: bold;
+    }
+    nav.navbar a {
+      color: #e0e0e0;
+      margin: 0 0.75rem;
+      position: relative;
+      transition: color 0.3s;
+    }
+    nav.navbar a:hover,
+    nav.navbar a.active {
+      color: #00ffc3;
+    }
+    .home {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+    .home-content {
+      flex: 1 1 400px;
+      padding: 1rem;
+    }
+    .home-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .home-content h3 {
+      margin-bottom: 1rem;
+    }
+    .home-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .home-sci a {
+      font-size: 1.75rem;
+      margin: 0 0.5rem;
+      color: #e0e0e0;
+      transition: color 0.3s;
+    }
+    .home-sci a:hover {
+      color: #00ffc3;
+    }
+    .home-img {
+      flex: 1 1 300px;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+    .glowing-circle {
+      position: relative;
+      display: inline-block;
+    }
+    .glowing-circle span {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      animation: glow 2s linear infinite;
+      opacity: 0.6;
+    }
+    @keyframes glow {
+      0% { transform: scale(0.9); opacity: 0.6; }
+      50% { transform: scale(1.1); opacity: 0.2; }
+      100% { transform: scale(0.9); opacity: 0.6; }
+    }
+    .glowing-circle .image img {
+      max-width: 100%;
+      border-radius: 50%;
+      z-index: 1;
+      position: relative;
+    }
+  </style>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+</head>
+<body>
+
+  <header class="header d-flex justify-content-between align-items-center">
+    <a href="#" class="logo">{ Portfolio }</a>
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="assets/Pages/whoami.html">Whoami</a>
+      <a href="assets/Pages/skills.html">Skills</a>
+      <a href="assets/Pages/artigos.html">Artigos</a>
+      <a href="assets/Pages/contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <section id="home" class="home">
+    <div class="home-content" data-scroll data-scroll-speed="-5">
+      <h3 class="mu">Olá, me chamo</h3>
+      <h1>Bruno Rhis</h1>
+      <h3>e eu sou <span class="pro-text"></span></h3>
+      <p>
+        Nesse portfólio, compartilho minhas realizações profissionais, ferramentas para testes de penetração e artigos sobre meus estudos. <br><br>
+        Espero contribuir para a comunidade de cibersegurança e receber feedbacks de colegas e amigos. <br><br>
+        Let's Hack!
+      </p>
+      <div class="home-sci">
+        <a href="https://github.com/brunorhis" target="_blank"><i class='bx bxl-github'></i></a>
+        <a href="https://www.linkedin.com/in/brunorhis/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://discord.gg/gfYw7kfMDU" target="_blank"><i class='bx bxl-discord'></i></a>
+        <a href="https://www.instagram.com/brunorhis/" target="_blank"><i class='bx bxl-instagram'></i></a>
+      </div>
+    </div>
+
+    <div class="home-img">
+      <div class="glowing-circle">
+        <span></span>
+        <span></span>
+        <div class="image">
+          <img src="assets/IMAGES/mage.png" alt="Imagem de Bruno Rhis">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts colocados ao final para melhor performance -->
+  <script>
+    // Bloqueia o menu de contexto (clique direito)
+    document.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+    });
+
+    // Inicializa o efeito de digitação
+    var typed = new Typed(".pro-text", {
+      strings: [
+        "Consultor de TI",
+        "Pentester",
+        "Programador",
+        "Hacker Ético",
+        "Estudante",
+        "Entusiasta"
+      ],
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 1000,
+      loop: true
+    });
+  </script>
+</body>
+</html>
