@@ -8,139 +8,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Bruno Rhis</title>
   <link rel="icon" href="assets/IMAGES/sailogo.png" type="image/png">
-  <!-- Usando o tema Cyborg do Bootswatch para um visual alternativo -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/cyborg/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/CSS/style.css">
+  <!-- Importando a fonte Orbitron para um toque futurista -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Importando Boxicons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <style>
-    /* Estilos customizados para o tema alternativo */
+    /* Reset e configurações básicas */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       background-color: #000;
-      color: #e6e6e6;
-      font-family: 'Roboto', sans-serif;
+      color: #e0e0e0;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1.6;
     }
-    header.header {
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #444;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-    header .logo {
-      font-size: 1.75rem;
-      color: #0dcaf0;
+    /* Header */
+    header {
+      padding: 20px;
+      border-bottom: 2px solid #39ff14;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 2rem;
       font-weight: 700;
-      letter-spacing: 1px;
+      color: #39ff14;
     }
-    nav.navbar a {
-      font-size: 1.1rem;
-      color: #e6e6e6;
-      margin: 0 1rem;
-      text-transform: uppercase;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      font-size: 1rem;
       transition: color 0.3s;
     }
-    nav.navbar a:hover,
-    nav.navbar a.active {
-      color: #0dcaf0;
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #39ff14;
     }
-    .home {
+    /* Seção Hero */
+    .hero {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      padding: 3rem 1rem;
+      justify-content: center;
       min-height: 80vh;
+      padding: 20px;
     }
-    .home-content, .home-img {
-      flex: 1 1 400px;
-      padding: 1rem;
+    .hero-text {
+      flex: 1 1 300px;
+      padding: 20px;
     }
-    .home-content h1 {
+    .hero-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .hero-text h1 {
       font-size: 3.5rem;
-      margin-bottom: 0.5rem;
-      color: #0dcaf0;
+      color: #39ff14;
+      margin-bottom: 10px;
     }
-    .home-content h3 {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
+    .hero-text h3 span {
+      color: #39ff14;
     }
-    .home-content p {
-      font-size: 1.125rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
+    .hero-text p {
+      font-size: 1rem;
+      margin-bottom: 20px;
     }
-    .home-sci a {
-      font-size: 1.8rem;
-      margin-right: 1rem;
-      color: #e6e6e6;
+    .social-links {
+      margin-top: 20px;
+    }
+    .social-links a {
+      font-size: 1.5rem;
+      margin-right: 15px;
       transition: color 0.3s;
     }
-    .home-sci a:hover {
-      color: #0dcaf0;
+    .social-links a:hover {
+      color: #39ff14;
     }
-    .home-img {
+    .hero-img {
+      flex: 1 1 300px;
       text-align: center;
+      padding: 20px;
     }
-    .home-img img {
+    .hero-img img {
       max-width: 300px;
       border-radius: 50%;
-      border: 3px solid #0dcaf0;
-      box-shadow: 0 0 20px #0dcaf0;
+      border: 4px solid #39ff14;
+      box-shadow: 0 0 15px #39ff14;
     }
     /* Responsividade */
     @media (max-width: 768px) {
-      .home {
+      header {
         flex-direction: column;
-      }
-      header, .home-content, .home-img {
         text-align: center;
       }
-      nav.navbar a {
-        margin: 0 0.5rem;
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .hero {
+        flex-direction: column;
       }
     }
   </style>
+  <!-- Typed.js -->
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 </head>
 <body>
-
-  <header class="header d-flex justify-content-between align-items-center">
-    <a href="#" class="logo">{ Portfolio }</a>
-    <nav class="navbar">
-      <a href="#home" class="active">Home</a>
-      <a href="assets/Pages/whoami.html">Whoami</a>
-      <a href="assets/Pages/skills.html">Skills</a>
-      <a href="assets/Pages/artigos.html">Artigos</a>
-      <a href="assets/Pages/contato.html">Contato</a>
+  <header>
+    <div class="logo">[ Portfolio ]</div>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="assets/Pages/whoami.html">Whoami</a></li>
+        <li><a href="assets/Pages/skills.html">Skills</a></li>
+        <li><a href="assets/Pages/artigos.html">Artigos</a></li>
+        <li><a href="assets/Pages/contato.html">Contato</a></li>
+      </ul>
     </nav>
   </header>
-
-  <section id="home" class="home">
-    <div class="home-content">
+  <section id="home" class="hero">
+    <div class="hero-text">
       <h3>Olá, eu sou</h3>
       <h1>Bruno Rhis</h1>
       <h3>e sou <span class="pro-text"></span></h3>
       <p>
-        Neste portfólio, compartilho minhas conquistas profissionais, ferramentas para testes de penetração e artigos sobre cibersegurança. <br>
-        Espero contribuir e aprender com a comunidade. <br>
-        Let's Hack!
+        Neste portfólio, compartilho minhas conquistas profissionais e conhecimentos em cibersegurança. Let's Hack!
       </p>
-      <div class="home-sci">
-        <a href="https://github.com/brunorhis" target="_blank"><i class='bx bxl-github'></i></a>
-        <a href="https://www.linkedin.com/in/brunorhis/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-        <a href="https://discord.gg/gfYw7kfMDU" target="_blank"><i class='bx bxl-discord'></i></a>
-        <a href="https://www.instagram.com/brunorhis/" target="_blank"><i class='bx bxl-instagram'></i></a>
+      <div class="social-links">
+        <a href="https://github.com/brunorhis" target="_blank"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/brunorhis/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://discord.gg/gfYw7kfMDU" target="_blank"><i class="bx bxl-discord"></i></a>
+        <a href="https://www.instagram.com/brunorhis/" target="_blank"><i class="bx bxl-instagram"></i></a>
       </div>
     </div>
-
-    <div class="home-img">
-      <img src="assets/IMAGES/mage.png" alt="Bruno Rhis">
+    <div class="hero-img">
+      <img src="assets/IMAGES/mage.png" alt="Imagem de Bruno Rhis">
     </div>
   </section>
-
   <script>
-    // Impede clique direito
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-    });
-
-    // Inicialização do efeito de digitação
+    // Bloqueia o clique com o botão direito
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    // Inicializa o Typed.js para o efeito de digitação
     new Typed(".pro-text", {
       strings: [
         "Consultor de TI",
@@ -150,8 +170,8 @@
         "Estudante",
         "Entusiasta"
       ],
-      typeSpeed: 80,
-      backSpeed: 60,
+      typeSpeed: 100,
+      backSpeed: 100,
       backDelay: 1000,
       loop: true
     });
