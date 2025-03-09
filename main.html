@@ -8,97 +8,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Bruno Rhis</title>
   <link rel="icon" href="assets/IMAGES/sailogo.png" type="image/png">
-  <!-- Bootstrap Darkly Theme via Bootswatch -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/darkly/bootstrap.min.css">
+  <!-- Usando o tema Cyborg do Bootswatch para um visual alternativo -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/cyborg/bootstrap.min.css">
   <link rel="stylesheet" href="assets/CSS/style.css">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <style>
-    /* Custom CSS para reforçar o tema cyber */
+    /* Estilos customizados para o tema alternativo */
     body {
-      background-color: #121212;
-      color: #e0e0e0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #e6e6e6;
+      font-family: 'Roboto', sans-serif;
     }
     header.header {
       padding: 1rem 2rem;
-      background: #1f1f1f;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      border-bottom: 1px solid #444;
     }
     header .logo {
-      font-size: 1.5rem;
-      color: #00ffc3;
-      font-weight: bold;
+      font-size: 1.75rem;
+      color: #0dcaf0;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
     nav.navbar a {
-      color: #e0e0e0;
-      margin: 0 0.75rem;
-      position: relative;
+      font-size: 1.1rem;
+      color: #e6e6e6;
+      margin: 0 1rem;
+      text-transform: uppercase;
       transition: color 0.3s;
     }
     nav.navbar a:hover,
     nav.navbar a.active {
-      color: #00ffc3;
+      color: #0dcaf0;
     }
     .home {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem;
+      padding: 3rem 1rem;
+      min-height: 80vh;
     }
-    .home-content {
+    .home-content, .home-img {
       flex: 1 1 400px;
       padding: 1rem;
     }
     .home-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+      color: #0dcaf0;
     }
     .home-content h3 {
+      font-size: 1.75rem;
       margin-bottom: 1rem;
     }
     .home-content p {
-      font-size: 1.1rem;
+      font-size: 1.125rem;
       line-height: 1.6;
+      margin-bottom: 1.5rem;
     }
     .home-sci a {
-      font-size: 1.75rem;
-      margin: 0 0.5rem;
-      color: #e0e0e0;
+      font-size: 1.8rem;
+      margin-right: 1rem;
+      color: #e6e6e6;
       transition: color 0.3s;
     }
     .home-sci a:hover {
-      color: #00ffc3;
+      color: #0dcaf0;
     }
     .home-img {
-      flex: 1 1 300px;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
+      text-align: center;
     }
-    .glowing-circle {
-      position: relative;
-      display: inline-block;
-    }
-    .glowing-circle span {
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
+    .home-img img {
+      max-width: 300px;
       border-radius: 50%;
-      animation: glow 2s linear infinite;
-      opacity: 0.6;
+      border: 3px solid #0dcaf0;
+      box-shadow: 0 0 20px #0dcaf0;
     }
-    @keyframes glow {
-      0% { transform: scale(0.9); opacity: 0.6; }
-      50% { transform: scale(1.1); opacity: 0.2; }
-      100% { transform: scale(0.9); opacity: 0.6; }
-    }
-    .glowing-circle .image img {
-      max-width: 100%;
-      border-radius: 50%;
-      z-index: 1;
-      position: relative;
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .home {
+        flex-direction: column;
+      }
+      header, .home-content, .home-img {
+        text-align: center;
+      }
+      nav.navbar a {
+        margin: 0 0.5rem;
+      }
     }
   </style>
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
@@ -117,13 +112,13 @@
   </header>
 
   <section id="home" class="home">
-    <div class="home-content" data-scroll data-scroll-speed="-5">
-      <h3 class="mu">Olá, me chamo</h3>
+    <div class="home-content">
+      <h3>Olá, eu sou</h3>
       <h1>Bruno Rhis</h1>
-      <h3>e eu sou <span class="pro-text"></span></h3>
+      <h3>e sou <span class="pro-text"></span></h3>
       <p>
-        Nesse portfólio, compartilho minhas realizações profissionais, ferramentas para testes de penetração e artigos sobre meus estudos. <br><br>
-        Espero contribuir para a comunidade de cibersegurança e receber feedbacks de colegas e amigos. <br><br>
+        Neste portfólio, compartilho minhas conquistas profissionais, ferramentas para testes de penetração e artigos sobre cibersegurança. <br>
+        Espero contribuir e aprender com a comunidade. <br>
         Let's Hack!
       </p>
       <div class="home-sci">
@@ -135,25 +130,18 @@
     </div>
 
     <div class="home-img">
-      <div class="glowing-circle">
-        <span></span>
-        <span></span>
-        <div class="image">
-          <img src="assets/IMAGES/mage.png" alt="Imagem de Bruno Rhis">
-        </div>
-      </div>
+      <img src="assets/IMAGES/mage.png" alt="Bruno Rhis">
     </div>
   </section>
 
-  <!-- Scripts colocados ao final para melhor performance -->
   <script>
-    // Bloqueia o menu de contexto (clique direito)
-    document.addEventListener('contextmenu', function(event) {
-      event.preventDefault();
+    // Impede clique direito
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
     });
 
-    // Inicializa o efeito de digitação
-    var typed = new Typed(".pro-text", {
+    // Inicialização do efeito de digitação
+    new Typed(".pro-text", {
       strings: [
         "Consultor de TI",
         "Pentester",
@@ -162,8 +150,8 @@
         "Estudante",
         "Entusiasta"
       ],
-      typeSpeed: 100,
-      backSpeed: 100,
+      typeSpeed: 80,
+      backSpeed: 60,
       backDelay: 1000,
       loop: true
     });
