@@ -1,38 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - Bruno Rhis</title>
-    <link rel="stylesheet" href="../CSS/pages.css">
+  <meta charset="UTF-8">
+  <meta name="description" content="Minhas Skills - Bruno Rhis">
+  <meta name="keywords" content="Bruno Rhis, Skills, Portfólio, TI, Pentest, Programação">
+  <meta name="author" content="Bruno Rhis">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Skills - Bruno Rhis</title>
+  <link rel="icon" href="../IMAGES/sailogo.png" type="image/png">
+  <!-- Importando a fonte Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Importando Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    /* Reset e configurações básicas */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      color: #e0e0e0;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Header */
+    header {
+      padding: 20px;
+      border-bottom: 2px solid #39ff14;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #39ff14;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #39ff14;
+    }
+    /* Seção Skills */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      min-height: 80vh;
+      padding: 20px;
+    }
+    .hero-text {
+      flex: 1 1 300px;
+      padding: 20px;
+    }
+    .hero-text h1 {
+      font-size: 3.5rem;
+      color: #39ff14;
+      margin-bottom: 20px;
+    }
+    .skills-list {
+      list-style: none;
+      font-size: 1.1rem;
+    }
+    .skills-list li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .hero {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <div class="logo">[ Skills ]</div>
+  <header>
+    <div class="logo">[ Portfolio ]</div>
     <nav>
-        <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="whoami.html">Whoami</a></li>
-            <li><a href="skills.html" class="active">Skills</a></li>
-            <li><a href="artigos.html">Artigos</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
+      <ul>
+        <li><a href="../../main.html">Home</a></li>
+        <li><a href="whoami.html">Whoami</a></li>
+        <li><a href="skills.html" class="active">Skills</a></li>
+        <li><a href="artigos.html">Artigos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
     </nav>
-</header>
-
-<section class="hero">
+  </header>
+  <section class="hero">
     <div class="hero-text">
-        <h1>Minhas Skills</h1>
-        <ul>
-            <li>🔹 **Pentest e Exploração de Vulnerabilidades**</li>
-            <li>🔹 **Desenvolvimento de Exploits e Automação**</li>
-            <li>🔹 **Segurança ofensiva e defensiva**</li>
-            <li>🔹 **Hardening de sistemas e servidores**</li>
-            <li>🔹 **Engenharia reversa e análise forense**</li>
-        </ul>
+      <h1>Minhas Habilidades</h1>
+      <ul class="skills-list">
+        <li><i class="bx bx-right-arrow-alt"></i> Consultoria de TI</li>
+        <li><i class="bx bx-right-arrow-alt"></i> Pentest & Segurança Cibernética</li>
+        <li><i class="bx bx-right-arrow-alt"></i> Programação (Web, Scripts)</li>
+        <li><i class="bx bx-right-arrow-alt"></i> Desenvolvimento de Software</li>
+        <li><i class="bx bx-right-arrow-alt"></i> Hacker Ético</li>
+        <li><i class="bx bx-right-arrow-alt"></i> Análise de Vulnerabilidades</li>
+      </ul>
     </div>
-</section>
-
+  </section>
 </body>
 </html>
