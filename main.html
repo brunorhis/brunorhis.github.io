@@ -8,16 +8,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Bruno Rhis</title>
   <link rel="icon" href="assets/IMAGES/sailogo.png" type="image/png">
-
   <!-- Importando a fonte Orbitron para um toque futurista -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-
   <!-- Importando Boxicons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-  <!-- Importando o CSS externo -->
-  <link rel="stylesheet" href="assets/CSS/style.css">
-
+  <style>
+    /* Reset e configurações básicas */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      color: #e0e0e0;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Header */
+    header {
+      padding: 20px;
+      border-bottom: 2px solid #39ff14;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #39ff14;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #39ff14;
+    }
+    /* Seção Hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      padding: 20px;
+    }
+    .hero-text {
+      flex: 1 1 300px;
+      padding: 20px;
+    }
+    .hero-text h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .hero-text h1 {
+      font-size: 3.5rem;
+      color: #39ff14;
+      margin-bottom: 10px;
+    }
+    .hero-text h3 span {
+      color: #39ff14;
+    }
+    .hero-text p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .social-links {
+      margin-top: 20px;
+    }
+    .social-links a {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #39ff14;
+    }
+    .hero-img {
+      flex: 1 1 300px;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero-img img {
+      max-width: 300px;
+      border-radius: 50%;
+      border: 4px solid #39ff14;
+      box-shadow: 0 0 15px #39ff14;
+    }
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .hero {
+        flex-direction: column;
+      }
+    }
+  </style>
   <!-- Typed.js -->
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 </head>
@@ -34,7 +138,6 @@
       </ul>
     </nav>
   </header>
-
   <section id="home" class="hero">
     <div class="hero-text">
       <h3>Olá, me chamo</h3>
@@ -54,11 +157,9 @@
       <img src="assets/IMAGES/mage.png" alt="Imagem de Bruno Rhis">
     </div>
   </section>
-
   <script>
     // Bloqueia o clique com o botão direito
     document.addEventListener('contextmenu', e => e.preventDefault());
-
     // Inicializa o Typed.js para o efeito de digitação
     new Typed(".pro-text", {
       strings: [
