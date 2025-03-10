@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Wordlist de Empresas</title>
+    <title>Gerador de Wordlist para Empresas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
         body {
@@ -48,7 +48,7 @@
 <body>
 
 <div class="container text-center">
-    <h2 class="mb-3">🔐 Gerador de Wordlist de Empresas</h2>
+    <h2 class="mb-3">🔐 Gerador de Wordlist para Empresas</h2>
 
     <form id="wordlistForm">
         <div class="mb-3">
@@ -62,8 +62,13 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Ano de Referência (opcional):</label>
-            <input type="text" id="referenceYear" class="form-control text-center" placeholder="Ex: 2024">
+            <label class="form-label">Ano Inicial (opcional):</label>
+            <input type="number" id="startYear" class="form-control text-center" min="2000" max="2025" placeholder="Ex: 2015">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Quantidade de Senhas:</label>
+            <input type="number" id="passwordQuantity" class="form-control text-center" min="10" max="500" value="50">
         </div>
 
         <button type="button" id="generateWordlistBtn" class="btn btn-custom mt-3">Gerar Wordlist</button>
@@ -72,14 +77,16 @@
     <textarea id="output" readonly></textarea>
     <button type="button" id="downloadBtn" class="btn btn-custom mt-3">Baixar Wordlist</button>
 
-    <div class="footer">© 2025 - Gerador de Wordlist Inteligente | Criado por ChatGPT</div>
+    <div class="footer">© 2025 - Gerador de Wordlist Inteligente | Criado com S2 por Bruno</div>
 </div>
 
 <script>
 document.getElementById('generateWordlistBtn').onclick = function () {
     let company = document.getElementById("companyName").value.trim();
     let employee = document.getElementById("employeeName").value.trim();
-    let year = document.getElementById("referenceYear").value.trim() || new Date().getFullYear();
+    let startYear = parseInt(document.getElementById("startYear").value) || new Date().getFullYear() - 10;
+    let passwordQuantity = parseInt(document.getElementById("passwordQuantity").value) || 50;
+    let currentYear = new Date().getFullYear();
     let wordlist = [];
 
     if (!company && !employee) {
@@ -87,36 +94,69 @@ document.getElementById('generateWordlistBtn').onclick = function () {
         return;
     }
 
+    let years = [];
+    for (let y = startYear; y <= currentYear; y++) {
+        years.push(y.toString());
+    }
+
     let commonPatterns = ["123", "1234", "2024", "!@", "#", "$", "!", "password"];
     let specialChars = ["@", "#", "$", "!", "*", "&"];
+    let substitutions = {
+        "a": "@",
+        "s": "$",
+        "o": "0",
+        "i": "1",
+        "e": "3",
+        "g": "9"
+    };
+
+    function applySubstitutions(word) {
+        let variations = [word, word.toLowerCase(), word.toUpperCase()];
+        let transformed = word.split("").map(char => substitutions[char] || char).join("");
+        variations.push(transformed);
+        return variations;
+    }
 
     function generateVariations(word) {
-        return [
-            word, word.toLowerCase(), word.toUpperCase(),
-            word + year, word + "123", word + "!", word + "@",
-            word.replace(/a/g, "@").replace(/o/g, "0").replace(/i/g, "1"),
-            word.replace(/e/g, "3").replace(/s/g, "$").replace(/g/g, "9"),
-        ];
+        let variations = applySubstitutions(word);
+        let generated = [];
+
+        variations.forEach(variation => {
+            commonPatterns.forEach(pattern => generated.push(variation + pattern));
+            years.forEach(year => generated.push(variation + year));
+            specialChars.forEach(char => generated.push(variation + char));
+        });
+
+        return generated;
     }
 
     if (company) {
         wordlist.push(...generateVariations(company));
-        commonPatterns.forEach(pattern => wordlist.push(company + pattern));
-        specialChars.forEach(char => wordlist.push(company + char));
     }
 
     if (employee) {
         wordlist.push(...generateVariations(employee));
-        commonPatterns.forEach(pattern => wordlist.push(employee + pattern));
-        specialChars.forEach(char => wordlist.push(employee + char));
     }
 
     if (company && employee) {
-        wordlist.push(company + employee, employee + company);
-        wordlist.push(company + "." + employee, employee + "." + company);
-        wordlist.push(employee + "@" + company, company + "@" + employee);
+        let combinedWords = [
+            company + employee,
+            employee + company,
+            company + "." + employee,
+            employee + "." + company,
+            employee + "@" + company,
+            company + "@" + employee
+        ];
+
+        combinedWords.forEach(combination => {
+            wordlist.push(...applySubstitutions(combination));
+            commonPatterns.forEach(pattern => wordlist.push(combination + pattern));
+            years.forEach(year => wordlist.push(combination + year));
+        });
     }
 
+    // Limita a quantidade de senhas geradas conforme a escolha do usuário
+    wordlist = [...new Set(wordlist)].slice(0, passwordQuantity);
     document.getElementById("output").value = wordlist.join("\n");
 };
 
