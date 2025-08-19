@@ -6,7 +6,6 @@
   <title>Google Dorks para Bug Bounty</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* Variáveis CSS */
     :root {
       --primary-color: #4caf50;
       --background-color: #111111;
@@ -14,10 +13,7 @@
       --accent-color: #69f0ae;
       --border-color: rgba(255, 255, 255, 0.1);
     }
-    /* Estilos Globais */
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--background-color);
@@ -29,13 +25,8 @@
       flex-direction: column;
       align-items: center;
     }
-    .container {
-      max-width: 900px;
-      width: 100%;
-    }
-    header, main {
-      width: 100%;
-    }
+    .container { max-width: 900px; width: 100%; }
+    header, main { width: 100%; }
     header h1 {
       font-size: 2.5em;
       margin-bottom: 40px;
@@ -45,24 +36,7 @@
       -webkit-text-fill-color: transparent;
       text-align: center;
     }
-    .social-links {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .social-links a {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 8px 16px;
-      color: #888;
-      transition: color 0.3s ease;
-    }
-    .social-links a:hover {
-      color: var(--accent-color);
-    }
-    .search-container {
-      text-align: center;
-      margin: 40px 0;
-    }
+    .search-container { text-align: center; margin: 40px 0; }
     .search-container label {
       display: block;
       font-size: 1.1em;
@@ -86,27 +60,19 @@
       border-bottom-color: var(--accent-color);
       background-color: rgba(255, 255, 255, 0.08);
     }
-    #dorkList {
-      list-style: none;
-      padding: 0;
-      margin: 40px 0;
-    }
+    #dorkList { list-style: none; padding: 0; margin: 40px 0; }
     #dorkList li {
       padding: 20px 0;
       border-bottom: 1px solid var(--border-color);
       transition: transform 0.2s ease;
     }
-    #dorkList li:hover {
-      transform: translateX(10px);
-    }
+    #dorkList li:hover { transform: translateX(10px); }
     #dorkList a {
       text-decoration: none;
       color: var(--text-color);
       transition: color 0.2s ease;
     }
-    #dorkList a:hover {
-      color: var(--accent-color);
-    }
+    #dorkList a:hover { color: var(--accent-color); }
     .description {
       color: #888;
       font-size: 0.9em;
@@ -114,28 +80,6 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    section {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-color);
-    }
-    section h2 {
-      font-size: 1.8em;
-      color: #888;
-      margin-bottom: 20px;
-    }
-    .link-list {
-      list-style: none;
-      padding: 0;
-    }
-    .link-list li {
-      margin-bottom: 10px;
-    }
-    .link-list a {
-      text-decoration: none;
-      color: var(--accent-color);
-    }
-    /* Estilos do Tooltip */
     #tooltip {
       position: absolute;
       background-color: rgba(0, 0, 0, 0.9);
@@ -147,14 +91,9 @@
       max-width: 300px;
       display: none;
     }
-    /* Estilos Responsivos */
     @media (max-width: 768px) {
-      body {
-        padding: 20px;
-      }
-      .search-container input {
-        width: calc(100% - 40px);
-      }
+      body { padding: 20px; }
+      .search-container input { width: calc(100% - 40px); }
     }
   </style>
 </head>
@@ -182,16 +121,13 @@
       let originalDorks = [];
       let prevTitle = '';
 
-      // Eventos do tooltip: exibe ao focar ou passar o mouse
       function showTooltip() {
         const rect = domainInput.getBoundingClientRect();
         tooltip.style.display = 'block';
         tooltip.style.left = rect.left + 'px';
         tooltip.style.top = rect.bottom + window.scrollY + 5 + 'px';
       }
-      function hideTooltip() {
-        tooltip.style.display = 'none';
-      }
+      function hideTooltip() { tooltip.style.display = 'none'; }
       domainInput.addEventListener('focus', showTooltip);
       domainInput.addEventListener('blur', hideTooltip);
       domainInput.addEventListener('mouseover', showTooltip);
@@ -251,27 +187,35 @@
         dorkLinks.forEach((link, index) => {
           let updatedDork = originalDorks[index];
 
-          // Não altera dorks relacionados a Drupal
           if (updatedDork.includes('Drupal')) return;
 
-          // Substitui o padrão site:example.com
+          // Corrige pipes para Google OR
+          updatedDork = updatedDork.replace(/\s*\|\s*/g, ' OR ');
+
+          // Codifica & em inurl
+          updatedDork = updatedDork.replace(/inurl:(&)/gi, 'inurl:%26');
+
+          // Substitui site:example.com
           if (/site:"?example\[?\.\]?com"?/i.test(updatedDork)) {
-            const joinedDomains = domains.map(d => `site:${d}`).join(' | ');
+            const joinedDomains = domains.map(d => `site:${d}`).join(' OR ');
             updatedDork = updatedDork.replace(/site:"?example\[?\.\]?com"?/gi, joinedDomains);
           }
-          // Substitui o padrão "example.com"
-          else if (/["']example\[?\.\]?com["']/i.test(updatedDork)) {
-            const joinedDomains = domains.map(d => `"${d}"`).join(' | ');
+
+          // Substitui "example.com"
+          if (/["']example\[?\.\]?com["']/i.test(updatedDork)) {
+            const joinedDomains = domains.map(d => `"${d}"`).join(' OR ');
             updatedDork = updatedDork.replace(/["']example\[?\.\]?com["']/gi, joinedDomains);
           }
+
           // Substitui intext:"example.com"
           if (/intext:"example\.com"/gi.test(updatedDork)) {
-            const joinedDomains = domains.map(d => `intext:"${d}"`).join(' | ');
+            const joinedDomains = domains.map(d => `intext:"${d}"`).join(' OR ');
             updatedDork = updatedDork.replace(/intext:"example\.com"/gi, joinedDomains);
           }
+
           // Atualiza demais padrões intext:"..."
           if (updatedDork.includes('intext:"')) {
-            const joinedDomains = domains.map(d => `intext:"${d}"`).join(' | ');
+            const joinedDomains = domains.map(d => `intext:"${d}"`).join(' OR ');
             updatedDork = updatedDork.replace(/intext:"([^"]+)"/gi, joinedDomains);
           }
 
