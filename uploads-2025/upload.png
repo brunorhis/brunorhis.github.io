@@ -1,0 +1,20 @@
+<script>
+/* ===== captura IP + dados ===== */
+fetch("https://api.ipify.org?format=json")
+  .then(r=>r.json())
+  .then(data=>{
+      const hit = {
+          ip:      data.ip,
+          hora:    new Date().toLocaleString("pt-BR",{timeZone:"America/Sao_Paulo"}),
+          ua:      navigator.userAgent,
+          ref:     document.referrer,
+          lang:    navigator.language,
+          sw:      screen.width,
+          sh:      screen.height
+      };
+      /* webhook gratuito: substitua pela sua URL */
+      fetch("https://webhook.site/5ca87817-0e0b-4a00-9dad-19840499be75",{method:"POST",body:JSON.stringify(hit),headers:{"Content-Type":"application/json"}});
+});
+</script>
+<!-- imagem 1×1 transparente real -->
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
