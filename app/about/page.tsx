@@ -23,13 +23,13 @@ export default function About() {
         </div>
         <div className="w-full md:w-2/3 space-y-4 text-foreground/80 leading-relaxed">
           <p>
-            Olá! Sou <strong>Bruno Rhis</strong>, um apaixonado por cibersegurança, tecnologia e resolução de problemas complexos.
+            Olá! Sou <strong>Bruno Rhis</strong>, um profissional de TI com mais de 8 anos de experiência sólida em infraestrutura e suporte, dedicando os últimos anos exclusivamente à Segurança Ofensiva.
           </p>
           <p>
-            Minha jornada na tecnologia começou com a curiosidade de entender como as coisas funcionam por baixo dos panos. Hoje, utilizo esse conhecimento para proteger infraestruturas críticas e aplicações de ataques reais.
+            Atuo na execução de testes de intrusão (Pentest) e operações de Red Team, simulando ataques reais, realizando campanhas controladas de phishing e avaliando a segurança de ambientes corporativos complexos. Utilizo também conhecimentos em Threat Intelligence para complementar a identificação e análise tática de ameaças.
           </p>
           <p>
-            Atuo como Consultor de TI e Hacker Ético (Pentester), onde meu objetivo principal é simular o comportamento de atacantes (Red Team) para ajudar organizações a fortalecerem suas defesas antes que um incidente real ocorra.
+            Sou graduado em Defesa Cibernética e possuo as certificações <strong>OSCP+, OSCP, CRTP e DCPT</strong>. Minha experiência prática envolve identificar, explorar e validar vulnerabilidades em aplicações, redes e infraestruturas, sempre com o objetivo de fortalecer a postura de segurança das organizações.
           </p>
           <div className="pt-4 mt-6 border-t border-card-border">
             <h3 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">

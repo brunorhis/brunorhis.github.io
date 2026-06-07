@@ -1,4 +1,4 @@
-import { Shield, Server, Code, Lock, Activity, Eye, Wifi, Target, Smartphone } from "lucide-react";
+import { Shield, Server, Code, Lock, Activity, Eye, Wifi, Target, Smartphone, Mail } from "lucide-react";
 
 export default function Services() {
   const services = [
@@ -41,6 +41,11 @@ export default function Services() {
       icon: <Smartphone className="h-6 w-6 text-accent-emerald" />,
       title: "Mobile Pentesting",
       description: "Análise de segurança em apps Android e iOS, identificando armazenamento inseguro, comunicação vulnerável e engenharia reversa."
+    },
+    {
+      icon: <Mail className="h-6 w-6 text-accent-cyan" />,
+      title: "Campanhas de Phishing",
+      description: "Simulação de ataques de engenharia social para avaliar o nível de conscientização em segurança dos colaboradores e eficácia dos controles."
     }
   ];
 
