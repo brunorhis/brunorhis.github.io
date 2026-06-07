@@ -15,7 +15,7 @@ export default function About() {
       <div className="glass p-8 rounded-2xl flex flex-col md:flex-row gap-8 items-start">
         <div className="w-full md:w-1/3 relative aspect-square rounded-xl overflow-hidden border border-card-border shrink-0">
           <Image 
-            src="/images/mage.png" 
+            src="/images/mage_v2.png" 
             alt="Bruno Rhis" 
             fill
             className="object-cover"
