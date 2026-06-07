@@ -31,17 +31,7 @@ export default function About() {
           <p>
             Sou graduado em Defesa Cibernética e possuo as certificações <strong>OSCP+, OSCP, CRTP e DCPT</strong>. Minha experiência prática envolve identificar, explorar e validar vulnerabilidades em aplicações, redes e infraestruturas, sempre com o objetivo de fortalecer a postura de segurança das organizações.
           </p>
-          <div className="pt-4 mt-6 border-t border-card-border">
-            <h3 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
-              <Shield className="h-5 w-5 text-accent-emerald" /> 
-              Foco Atual
-            </h3>
-            <ul className="list-disc list-inside space-y-1 ml-1 text-sm">
-              <li><strong>Testes de Invasão & Red Team:</strong> Reprodução de cenários reais de ataque em aplicações e infraestruturas complexas.</li>
-              <li><strong>Gestão de Vulnerabilidades:</strong> Identificação proativa de falhas e análise contínua da superfície de exposição corporativa.</li>
-              <li><strong>Desenvolvimento Contínuo:</strong> Aprimoramento técnico constante para enfrentar e mitigar ameaças modernas (Eterno Estudante).</li>
-            </ul>
-          </div>
+
         </div>
       </div>
     </div>
