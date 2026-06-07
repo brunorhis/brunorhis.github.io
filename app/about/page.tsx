@@ -37,9 +37,9 @@ export default function About() {
               Foco Atual
             </h3>
             <ul className="list-disc list-inside space-y-1 ml-1 text-sm">
-              <li>Testes de Invasão em Aplicações Web (Web App Pentesting)</li>
-              <li>Análise de Vulnerabilidades e Gestão de Riscos</li>
-              <li>Aperfeiçoamento constante (Eterno Estudante)</li>
+              <li><strong>Testes de Invasão & Red Team:</strong> Reprodução de cenários reais de ataque em aplicações e infraestruturas complexas.</li>
+              <li><strong>Gestão de Vulnerabilidades:</strong> Identificação proativa de falhas e análise contínua da superfície de exposição corporativa.</li>
+              <li><strong>Desenvolvimento Contínuo:</strong> Aprimoramento técnico constante para enfrentar e mitigar ameaças modernas (Eterno Estudante).</li>
             </ul>
           </div>
         </div>
