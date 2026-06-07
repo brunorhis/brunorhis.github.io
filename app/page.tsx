@@ -38,7 +38,7 @@ export default function Home() {
               <div className="aspect-square rounded-full relative glass overflow-hidden border-2 border-accent/50 shadow-[0_0_50px_rgba(34,197,94,0.3)]">
                 {/* Aqui entraremos com a imagem depois. Por enquanto usamos um placeholder da imagem migrada */}
                 <Image 
-                  src="/images/mage.png" 
+                  src="/images/mage_v2.png" 
                   alt="Bruno Rhis" 
                   fill
                   className="object-cover"
