@@ -37,11 +37,7 @@ export default function Services() {
       title: "Auditoria de Segurança",
       description: "Revisão detalhada de arquitetura, Active Directory e configurações de nuvem para garantir as melhores práticas de cibersegurança."
     },
-    {
-      icon: <Smartphone className="h-6 w-6 text-accent-emerald" />,
-      title: "Mobile Pentesting",
-      description: "Análise de segurança em apps Android e iOS, identificando armazenamento inseguro, comunicação vulnerável e engenharia reversa."
-    },
+
     {
       icon: <Mail className="h-6 w-6 text-accent-cyan" />,
       title: "Campanhas de Phishing",
