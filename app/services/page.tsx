@@ -1,4 +1,4 @@
-import { Shield, Server, Code, Lock, Activity, Eye } from "lucide-react";
+import { Shield, Server, Code, Lock, Activity, Eye, Wifi, Target } from "lucide-react";
 
 export default function Services() {
   const services = [
@@ -18,9 +18,24 @@ export default function Services() {
       description: "Varredura automatizada e triagem manual para mapear a superfície de ataque da organização e priorizar correções."
     },
     {
-      icon: <Shield className="h-8 w-8 text-accent-emerald" />,
-      title: "Consultoria em Segurança",
-      description: "Aconselhamento técnico para implementação de práticas de desenvolvimento seguro (DevSecOps) e arquitetura de segurança."
+      icon: <Activity className="h-8 w-8 text-accent-emerald" />,
+      title: "API Pentesting",
+      description: "Avaliação de segurança focada em APIs REST e GraphQL para descobrir falhas de autenticação, autorização e manipulação de dados."
+    },
+    {
+      icon: <Target className="h-8 w-8 text-accent-cyan" />,
+      title: "Red Team Operations",
+      description: "Simulação realista de ataques direcionados para testar as capacidades de detecção e resposta (Blue Team) da sua organização."
+    },
+    {
+      icon: <Wifi className="h-8 w-8 text-accent-emerald" />,
+      title: "Wi-Fi Pentesting",
+      description: "Testes de intrusão em redes sem fio corporativas para identificar criptografia fraca, configurações inseguras e ataques de rede."
+    },
+    {
+      icon: <Eye className="h-8 w-8 text-accent-cyan" />,
+      title: "Auditoria de Segurança",
+      description: "Revisão detalhada de arquitetura, Active Directory e configurações de nuvem para garantir as melhores práticas de cibersegurança."
     }
   ];
 
