@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Contato - Bruno Rhis">
+  <meta name="keywords" content="Bruno Rhis, Contato, Portfólio, TI, Segurança">
+  <meta name="author" content="Bruno Rhis">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Contato - Bruno Rhis</title>
+  <link rel="icon" href="../IMAGES/sailogo.png" type="image/png">
+  <!-- Importando a fonte Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Importando Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    /* Reset e configurações básicas */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      color: #e0e0e0;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Header */
+    header {
+      padding: 20px;
+      border-bottom: 2px solid #39ff14;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #39ff14;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #39ff14;
+    }
+    /* Seção Contato */
+    .contact-section {
+      padding: 20px;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact-section h1 {
+      font-size: 3.5rem;
+      color: #39ff14;
+      margin-bottom: 20px;
+    }
+    .contact-form {
+      width: 100%;
+      max-width: 500px;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      background-color: #222;
+      border: 1px solid #39ff14;
+      color: #e0e0e0;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .contact-form button {
+      padding: 10px 20px;
+      background-color: #39ff14;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .contact-form button:hover {
+      background-color: #2ecc12;
+    }
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">[ Portfolio ]</div>
+    <nav>
+      <ul>
+        <li><a href="../../main.html">Home</a></li>
+        <li><a href="whoami.html">Whoami</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="artigos.html">Artigos</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="contact-section">
+    <h1>Contato</h1>
+      <label for="name">Nome:</label>
+
+      <label for="email">Email:</label>
+      <input type

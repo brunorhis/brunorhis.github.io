@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Artigos - Bruno Rhis">
+  <meta name="keywords" content="Bruno Rhis, Artigos, Portfólio, Segurança, TI, Pentest">
+  <meta name="author" content="Bruno Rhis">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Artigos - Bruno Rhis</title>
+  <link rel="icon" href="../IMAGES/sailogo.png" type="image/png">
+  <!-- Importando a fonte Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Importando Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    /* Reset e configurações básicas */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      color: #e0e0e0;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Header */
+    header {
+      padding: 20px;
+      border-bottom: 2px solid #39ff14;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #39ff14;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #39ff14;
+    }
+    /* Seção Artigos */
+    .hero {
+      padding: 20px;
+      min-height: 80vh;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      color: #39ff14;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .articles-list {
+      list-style: none;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .articles-list li {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #39ff14;
+    }
+    .articles-list li a {
+      color: #e0e0e0;
+      font-weight: bold;
+    }
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">[ Portfolio ]</div>
+    <nav>
+      <ul>
+        <li><a href="../../main.html">Home</a></li>
+        <li><a href="whoami.html">Whoami</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="artigos.html" class="active">Artigos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Artigos</h1>
+    <ul class="articles-list">
+      <li>
+        <a href="#">Artigo 1: </a>
+        <p></p>
+      </li>
+    </ul>
+  </section>
+</body>
+</html>
