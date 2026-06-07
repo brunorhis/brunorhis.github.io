@@ -18,7 +18,7 @@ export default function Contact() {
           </div>
           <h2 className="text-2xl font-bold mb-2">E-mail</h2>
           <p className="text-foreground/70 mb-6">A forma mais direta de falar comigo sobre serviços corporativos.</p>
-          <a href="mailto:contato@exemplo.com" className="px-6 py-2 bg-accent text-black font-bold rounded-md hover:opacity-90 transition-opacity">
+          <a href="mailto:brunorhis@brcybersec.com" className="px-6 py-2 bg-accent text-black font-bold rounded-md hover:opacity-90 transition-opacity">
             Enviar E-mail
           </a>
         </div>
