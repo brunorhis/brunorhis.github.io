@@ -19,7 +19,7 @@ export default function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Ignorar caminhos de API, _next/static, _next/image, favicon, SVG, etc.
-    "/((?!api|_next/static|_next/image|images|favicon.ico|icon.svg|.*\\..*).*)"
+    // Ignorar caminhos de API, _next/static, _next/image, favicon, SVG, rota de login, etc.
+    "/((?!api|_next/static|_next/image|images|favicon.ico|icon.svg|login|.*\\..*).*)"
   ],
 };
