@@ -1,15 +1,18 @@
 import { Award, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { getDictionary } from "../../../lib/dictionaries";
 
 function ImageBadge({ imagePath, title, verifyUrl, verifyText, noUrlText }: { imagePath: string, title: string, verifyUrl?: string, verifyText: string, noUrlText: string }) {
   return (
     <div className="glass p-6 rounded-xl flex flex-col items-center justify-between hover:border-accent/50 transition-all group h-[360px]">
-      <div className="relative w-full flex-1 flex items-center justify-center">
-        <img 
+      <div className="relative w-48 h-48 flex items-center justify-center">
+        <Image 
           src={imagePath} 
           alt={title} 
-          className="w-48 h-48 object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-300" 
+          fill
+          sizes="(max-width: 768px) 100vw, 192px"
+          className="object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-300" 
         />
       </div>
       <div className="text-center mt-4 h-14 flex flex-col items-center justify-end">
@@ -18,6 +21,7 @@ function ImageBadge({ imagePath, title, verifyUrl, verifyText, noUrlText }: { im
           <Link 
             href={verifyUrl} 
             target="_blank"
+            rel="noopener noreferrer"
             className="text-xs text-accent hover:underline inline-flex items-center gap-1 mt-1"
           >
             {verifyText} <ExternalLink className="h-3 w-3" />

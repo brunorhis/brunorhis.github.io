@@ -1,4 +1,4 @@
-import { Shield, Server, Code, Lock, Activity, Eye, Wifi, Target, Smartphone, Mail } from "lucide-react";
+import { Shield, Server, Code, Lock, Activity, Eye, Wifi, Target, Mail } from "lucide-react";
 import { getDictionary } from "../../../lib/dictionaries";
 
 export default async function Services({ params }: { params: Promise<{ lang: string }> }) {

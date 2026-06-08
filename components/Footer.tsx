@@ -1,4 +1,4 @@
-import { Code2, Briefcase, Camera, Terminal } from "lucide-react";
+import { Briefcase, Camera, Terminal } from "lucide-react";
 import Link from "next/link";
 
 export function Footer({ dict }: { dict: any }) {
@@ -15,13 +15,13 @@ export function Footer({ dict }: { dict: any }) {
           &copy; {new Date().getFullYear()} Bruno Rhis. {dict.footer.rights}
         </p>
         <div className="flex items-center gap-4">
-          <Link href="https://github.com/brunorhis" target="_blank" className="text-foreground/70 hover:text-accent transition-colors" title="GitHub">
+          <Link href="https://github.com/brunorhis" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-accent transition-colors" title="GitHub">
             <Terminal className="h-5 w-5" />
           </Link>
-          <Link href="https://www.linkedin.com/in/brunorhis/" target="_blank" className="text-foreground/70 hover:text-accent transition-colors" title="LinkedIn">
+          <Link href="https://www.linkedin.com/in/brunorhis/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-accent transition-colors" title="LinkedIn">
             <Briefcase className="h-5 w-5" />
           </Link>
-          <Link href="https://www.instagram.com/brunorhis/" target="_blank" className="text-foreground/70 hover:text-accent transition-colors" title="Instagram">
+          <Link href="https://www.instagram.com/brunorhis/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-accent transition-colors" title="Instagram">
             <Camera className="h-5 w-5" />
           </Link>
         </div>

@@ -32,15 +32,15 @@ export default async function Contact({ params }: { params: Promise<{ lang: stri
             <Terminal className="h-6 w-6 text-accent-alt" /> {dict.contact.social_title}
           </h2>
           <div className="space-y-4">
-            <Link href="https://www.linkedin.com/in/brunorhis/" target="_blank" className="flex items-center gap-4 p-4 rounded-lg bg-card-bg/50 hover:bg-card-bg transition-colors border border-transparent hover:border-card-border">
+            <Link href="https://www.linkedin.com/in/brunorhis/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-lg bg-card-bg/50 hover:bg-card-bg transition-colors border border-transparent hover:border-card-border">
               <Briefcase className="h-6 w-6 text-[#0077b5]" />
               <span className="font-medium">LinkedIn</span>
             </Link>
-            <Link href="https://github.com/brunorhis" target="_blank" className="flex items-center gap-4 p-4 rounded-lg bg-card-bg/50 hover:bg-card-bg transition-colors border border-transparent hover:border-card-border">
+            <Link href="https://github.com/brunorhis" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-lg bg-card-bg/50 hover:bg-card-bg transition-colors border border-transparent hover:border-card-border">
               <ExternalLink className="h-6 w-6 text-foreground" />
               <span className="font-medium">GitHub</span>
             </Link>
-            <Link href="https://www.instagram.com/brunorhis/" target="_blank" className="flex items-center gap-4 p-4 rounded-lg bg-card-bg/50 hover:bg-card-bg transition-colors border border-transparent hover:border-card-border">
+            <Link href="https://www.instagram.com/brunorhis/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-lg bg-card-bg/50 hover:bg-card-bg transition-colors border border-transparent hover:border-card-border">
               <Camera className="h-6 w-6 text-[#E1306C]" />
               <span className="font-medium">Instagram</span>
             </Link>
