@@ -34,8 +34,11 @@ export function Header({ dict, lang }: { dict: any, lang: string }) {
           </Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Link href={`/${toggleLang}`} className="flex items-center justify-center h-8 w-8 rounded-full bg-card-bg border border-card-border hover:border-accent/50 transition-all text-sm font-bold" title={`Mudar para ${flagText}`}>
-            {flagIcon}
+          <Link href={`/${toggleLang}`} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-card-bg border border-card-border hover:border-accent/50 transition-all text-sm font-medium" title={`Mudar idioma / Change language`}>
+            <span className="text-base leading-none">{flagIcon}</span>
+            <span className="text-foreground/80 hidden sm:inline-block">
+              {lang === 'pt' ? 'English' : 'Português'}
+            </span>
           </Link>
           <div className="md:hidden">
             {/* Mobile menu button could go here */}
