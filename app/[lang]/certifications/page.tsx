@@ -79,8 +79,7 @@ export default async function Certifications({ params }: { params: Promise<{ lan
         <ImageBadge 
           imagePath="/images/dcpt.png" 
           title="DCPT" 
-          verifyUrl="https://desecsecurity.com/valida-certificacao"
-          code="SPJV-FVHDE-WEPK"
+          verifyUrl="https://academy.desecsecurity.com/certificacao/SPJV-FVHDE-WEPK"
           verifyText={dict.certifications.verify}
           noUrlText={dict.certifications.no_url}
         />
