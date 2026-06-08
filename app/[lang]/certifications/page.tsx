@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getDictionary } from "../../../lib/dictionaries";
 
-function ImageBadge({ imagePath, title, verifyUrl, verifyText, noUrlText }: { imagePath: string, title: string, verifyUrl?: string, verifyText: string, noUrlText: string }) {
+function ImageBadge({ imagePath, title, verifyUrl, verifyText, noUrlText, code }: { imagePath: string, title: string, verifyUrl?: string, verifyText: string, noUrlText: string, code?: string }) {
   return (
     <div className="glass p-6 rounded-xl flex flex-col items-center justify-between hover:border-accent/50 transition-all group h-[360px]">
       <div className="relative w-48 h-48 flex items-center justify-center">
@@ -15,8 +15,9 @@ function ImageBadge({ imagePath, title, verifyUrl, verifyText, noUrlText }: { im
           className="object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-300" 
         />
       </div>
-      <div className="text-center mt-4 h-14 flex flex-col items-center justify-end">
+      <div className="text-center mt-4 h-16 flex flex-col items-center justify-end">
         <h3 className="font-bold text-base text-foreground">{title}</h3>
+        {code && <p className="text-[10px] text-foreground/50 font-mono mt-0.5">{code}</p>}
         {verifyUrl ? (
           <Link 
             href={verifyUrl} 
@@ -78,7 +79,8 @@ export default async function Certifications({ params }: { params: Promise<{ lan
         <ImageBadge 
           imagePath="/images/dcpt.png" 
           title="DCPT" 
-          verifyUrl="https://www.desecsecurity.com/valida-certificado"
+          verifyUrl="https://desecsecurity.com/valida-certificacao"
+          code="SPJV-FVHDE-WEPK"
           verifyText={dict.certifications.verify}
           noUrlText={dict.certifications.no_url}
         />
