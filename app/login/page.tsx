@@ -25,10 +25,10 @@ export default function Login() {
       <div className="container mx-auto px-4 py-12 flex flex-col items-center justify-center min-h-[70vh]">
         <div className="glass p-8 rounded-2xl max-w-lg w-full text-center border-accent-emerald/50 border shadow-[0_0_30px_rgba(16,185,129,0.15)] animate-in fade-in zoom-in duration-500">
           <h1 className="text-4xl font-bold tracking-tight text-accent-emerald mb-4">
-            CONGRATULATIONS! 🎉
+            GOTCHA! 📸
           </h1>
           <p className="text-foreground/80 mb-6 font-mono">
-            Flag captured: CTF{'{'}h1dd3n_g0r1ll4_4dm1n{'}'}
+            Você caiu no Honeypot! Seu IP foi "registrado". 🦍
           </p>
           <div className="relative w-full aspect-square rounded-xl overflow-hidden mb-2 border-2 border-accent-emerald/20">
             <Image 

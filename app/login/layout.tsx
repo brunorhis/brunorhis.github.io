@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Restricted Area - CTF",
+  title: "Restricted Area",
 };
 
 export default function LoginLayout({
