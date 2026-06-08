@@ -1,14 +1,19 @@
 import { Code2, Briefcase, Camera, Terminal } from "lucide-react";
 import Link from "next/link";
 
-export function Footer() {
+export function Footer({ dict }: { dict: any }) {
   return (
-    <footer className="border-t border-card-border bg-background py-8">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2 text-foreground/70 text-sm">
-          <Code2 className="h-5 w-5 text-accent-alt" />
-          <span>&copy; {new Date().getFullYear()} Bruno Rhis. Todos os direitos reservados.</span>
+    <footer className="border-t border-card-border bg-card-bg mt-auto">
+      <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-2 opacity-50">
+          <Terminal className="h-5 w-5 text-accent" />
+          <span className="font-mono font-bold tracking-tight text-foreground">
+            bruno<span className="text-accent">rhis</span>
+          </span>
         </div>
+        <p className="text-sm text-foreground/50 text-center md:text-right">
+          &copy; {new Date().getFullYear()} Bruno Rhis. {dict.footer.rights}
+        </p>
         <div className="flex items-center gap-4">
           <Link href="https://github.com/brunorhis" target="_blank" className="text-foreground/70 hover:text-accent transition-colors" title="GitHub">
             <Terminal className="h-5 w-5" />

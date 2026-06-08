@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
+import "../globals.css";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { getDictionary } from "../../lib/dictionaries";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,22 +20,31 @@ export const metadata: Metadata = {
   description: "Portfólio de Bruno Rhis - Consultor de TI, Pentester, Programador e Hacker Ético.",
 };
 
-export default function RootLayout({
+export async function generateStaticParams() {
+  return [{ lang: "pt" }, { lang: "en" }];
+}
+
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }>) {
+  const { lang } = await params;
+  const dict = getDictionary(lang);
+
   return (
     <html
-      lang="pt-BR"
+      lang={lang}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <Header />
+        <Header dict={dict} lang={lang} />
         <main className="flex-1">
           {children}
         </main>
-        <Footer />
+        <Footer dict={dict} />
       </body>
     </html>
   );

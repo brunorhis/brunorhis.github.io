@@ -1,0 +1,88 @@
+{
+  "navigation": {
+    "whoami": "Whoami",
+    "services": "Services",
+    "articles": "Articles",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "home": {
+    "role": "Cybersecurity Consultant & Pentester",
+    "title1": "Offensive Security",
+    "title2": "& Pentest",
+    "description": "Technical security auditing and penetration testing to identify and fix critical vulnerabilities in your infrastructure.",
+    "cta_consulting": "Request Consulting",
+    "cta_portfolio": "See my work"
+  },
+  "about": {
+    "badge": "whoami",
+    "title": "About me",
+    "p1": "Hello! I'm <strong class='text-accent'>Bruno Rhis</strong>, an IT professional with over 8 years of solid experience in infrastructure and support, dedicating recent years exclusively to Offensive Security.",
+    "p2": "I work conducting penetration testing (Pentest) and Red Team operations, simulating real attacks, running controlled phishing campaigns, and evaluating the security of complex corporate environments. I also use Threat Intelligence knowledge to complement tactical threat identification and analysis.",
+    "p3": "I have a degree in Cyber Defense and hold the <strong class='text-accent'>OSCP+, OSCP, CRTP, and DCPT</strong> certifications. My practical experience involves identifying, exploiting, and validating vulnerabilities in applications, networks, and infrastructures, always aiming to strengthen organizations' security posture."
+  },
+  "services": {
+    "title": "Professional Services",
+    "description": "I offer offensive security solutions tailored to your business needs to ensure the integrity and confidentiality of your data.",
+    "items": [
+      {
+        "title": "Web App Pentesting",
+        "description": "Deep analysis of web applications seeking critical flaws (OWASP Top 10), business logic issues, and API vulnerabilities."
+      },
+      {
+        "title": "Network Pentesting",
+        "description": "Security assessment of corporate network infrastructure, identifying open ports, outdated services, and segmentation flaws."
+      },
+      {
+        "title": "Vulnerability Assessment",
+        "description": "Automated scanning and manual triage to map the organization's attack surface and prioritize remediations."
+      },
+      {
+        "title": "API Pentesting",
+        "description": "Security assessment focused on REST and GraphQL APIs to discover authentication, authorization, and data manipulation flaws."
+      },
+      {
+        "title": "Red Team Operations",
+        "description": "Realistic simulation of targeted attacks to test your organization's detection and response capabilities (Blue Team)."
+      },
+      {
+        "title": "Wi-Fi Pentesting",
+        "description": "Penetration testing on corporate wireless networks to identify weak encryption, insecure configurations, and network attacks."
+      },
+      {
+        "title": "Security Audit",
+        "description": "Detailed review of architecture, Active Directory, and cloud configurations to ensure cybersecurity best practices."
+      },
+      {
+        "title": "Phishing Campaigns",
+        "description": "Simulation of social engineering attacks to assess the level of security awareness of employees and the effectiveness of controls."
+      }
+    ]
+  },
+  "certifications": {
+    "badge": "Achievements",
+    "title": "Certifications",
+    "description": "My journey of continuous learning through the main certifications in the cybersecurity industry.",
+    "verify": "Verify",
+    "no_url": "No URL"
+  },
+  "contact": {
+    "title": "Let's Talk?",
+    "description": "Have a project in mind, need a vulnerability assessment, or just want to chat about information security? Get in touch!",
+    "email_title": "E-mail",
+    "email_desc": "The most direct way to reach me regarding corporate services.",
+    "email_btn": "Send E-mail",
+    "social_title": "Social Media"
+  },
+  "blog": {
+    "badge": "Knowledge Base",
+    "title": "Articles & Write-ups",
+    "description": "Sharing knowledge about hacking, pentesting methodologies, and certification reviews.",
+    "demo_tag": "Demo layout (Content coming soon)",
+    "coming_soon": "Coming soon",
+    "read_more": "Read full article →"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
