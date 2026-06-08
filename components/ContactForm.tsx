@@ -11,10 +11,7 @@ export function ContactForm({ dict }: { dict: any }) {
     setStatus("submitting");
 
     const formData = new FormData(e.currentTarget);
-    // Para funcionar localmente ou em prod, o fallback será sua chave gerada.
-    // O usuário colará a chave do Web3Forms no NEXT_PUBLIC_WEB3FORMS_KEY depois, 
-    // ou deixaremos uma chave de placeholder.
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "SUA_CHAVE_AQUI";
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "c3534883-475d-4333-abe8-5c766356220b";
     formData.append("access_key", accessKey);
 
     try {
