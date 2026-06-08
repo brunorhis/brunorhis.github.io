@@ -69,10 +69,17 @@
   "contact": {
     "title": "Vamos Conversar?",
     "description": "Tem um projeto em mente, precisa de uma análise de vulnerabilidades ou quer apenas trocar uma ideia sobre segurança da informação? Entre em contato!",
-    "email_title": "E-mail",
-    "email_desc": "A forma mais direta de falar comigo sobre serviços corporativos.",
-    "email_btn": "Enviar E-mail",
     "social_title": "Redes Sociais"
+  },
+  "contactForm": {
+    "name_label": "Seu Nome",
+    "email_label": "Seu E-mail corporativo",
+    "message_label": "Como posso ajudar?",
+    "button_idle": "Enviar Mensagem",
+    "button_sending": "Enviando...",
+    "success_title": "Mensagem Enviada!",
+    "success_desc": "Obrigado pelo contato. Retornarei o mais breve possível.",
+    "error_desc": "Ocorreu um erro ao enviar a mensagem. Tente novamente ou use o e-mail diretamente."
   },
   "blog": {
     "badge": "Knowledge Base",

@@ -69,10 +69,17 @@
   "contact": {
     "title": "Let's Talk?",
     "description": "Have a project in mind, need a vulnerability assessment, or just want to chat about information security? Get in touch!",
-    "email_title": "E-mail",
-    "email_desc": "The most direct way to reach me regarding corporate services.",
-    "email_btn": "Send E-mail",
     "social_title": "Social Media"
+  },
+  "contactForm": {
+    "name_label": "Your Name",
+    "email_label": "Your Business E-mail",
+    "message_label": "How can I help you?",
+    "button_idle": "Send Message",
+    "button_sending": "Sending...",
+    "success_title": "Message Sent!",
+    "success_desc": "Thank you for reaching out. I'll get back to you as soon as possible.",
+    "error_desc": "An error occurred while sending the message. Please try again or use my email directly."
   },
   "blog": {
     "badge": "Knowledge Base",

@@ -1,6 +1,7 @@
-import { Mail, Terminal, Briefcase, Camera, ExternalLink } from "lucide-react";
+import { Terminal, Briefcase, Camera, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { getDictionary } from "../../../lib/dictionaries";
+import { ContactForm } from "../../../components/ContactForm";
 
 export default async function Contact({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -16,16 +17,7 @@ export default async function Contact({ params }: { params: Promise<{ lang: stri
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="glass p-8 rounded-2xl flex flex-col items-center justify-center text-center hover:border-accent/50 transition-colors">
-          <div className="h-16 w-16 bg-accent/10 rounded-full flex items-center justify-center mb-6">
-            <Mail className="h-8 w-8 text-accent" />
-          </div>
-          <h2 className="text-2xl font-bold mb-2">{dict.contact.email_title}</h2>
-          <p className="text-foreground/70 mb-6">{dict.contact.email_desc}</p>
-          <a href="mailto:brunorhis@brcybersec.com" className="px-6 py-2 bg-accent text-black font-bold rounded-md hover:opacity-90 transition-opacity">
-            {dict.contact.email_btn}
-          </a>
-        </div>
+        <ContactForm dict={dict.contactForm} />
 
         <div className="glass p-8 rounded-2xl flex flex-col justify-center">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
